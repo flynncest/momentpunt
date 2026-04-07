@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Boeken | Momentbox Vending Machine Verhuur Noord-Brabant</title>
+  <meta name="description" content="Boek Momentbox voor jouw bruiloft, verjaardag of bedrijfsfeest. Vending machine verhuur vanuit Noord-Brabant. Stuur een aanvraag via het formulier — reactie binnen 1 werkdag." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .contact-info-card {
+      background: var(--beige-2);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      border: 1px solid var(--beige-3);
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--beige-3);
+    }
+    .contact-info-item:last-child { border-bottom: none; }
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-info-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+    .contact-info-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .contact-info-value a { color: var(--terra); }
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      border: 1px solid var(--beige-3);
+      box-shadow: var(--shadow-sm);
+    }
+    .success-msg {
+      display: none;
+      background: linear-gradient(135deg, #f0faf0, #e8f5e8);
+      border: 1.5px solid #a8d5a8;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .success-msg.show { display: block; }
+    .process-mini {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 48px 0;
+    }
+    .process-mini-item {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--beige-3);
+    }
+    .process-mini-emoji { font-size: 1.8rem; margin-bottom: 10px; }
+    .process-mini-item p { font-size: 0.82rem; color: var(--text-soft); margin-top: 4px; }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .process-mini { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .form-card { padding: 24px; }
+      .contact-info-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled">
+  <div class="nav-inner">
+    <ul class="nav-links nav-links-left">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="stickerbooth.html">Sticker Booth</a></li>
+      <li><a href="greetingcardbooth.html">Greeting Card Booth</a></li>
+    </ul>
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Momentbox" />
+    </a>
+    <ul class="nav-links nav-links-right">
+      <li><a href="pakketten.html">Pakketten</a></li>
+      <li><a href="contact.html" class="active"class="btn btn-primary btn-sm nav-cta">Boeken</a></li>
+    </ul>
+    <button class="hamburger" onclick="openMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="stickerbooth.html" onclick="closeMenu()">Sticker Booth</a>
+  <a href="greetingcardbooth.html" onclick="closeMenu()">Greeting Card Booth</a>
+  <a href="pakketten.html" onclick="closeMenu()">Pakketten</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<div class="nav-offset"></div>
+
+<!-- ── Hero ── -->
+<section style="background:var(--beige-2);padding:72px 0 52px;position:relative;overflow:hidden;">
+  <div class="hero-dots" style="opacity:0.4;"></div>
+  <span class="deco-star" style="top:18%;left:5%;">✦</span>
+  <span class="deco-star" style="bottom:20%;right:7%;font-size:0.9rem;">★</span>
+  <div class="container text-center" style="position:relative;z-index:2;">
+    <div style="margin-bottom:20px;"><span class="sticker-tag">📩 Momentbox boeken</span></div>
+    <h1 class="fade-up">Jouw event verdient een<br /><em style="color:var(--beige-3);">onvergetelijk moment</em></h1>
+    <p class="fade-up" style="max-width:500px;margin:20px auto 0;font-size:1.05rem;color:var(--text-mid);line-height:1.75;">
+      Stuur ons een aanvraag en we nemen binnen één werkdag contact op. Beschikbaarheid is beperkt — boek op tijd.
+    </p>
+  </div>
+</section>
+
+<!-- ── Process mini ── -->
+<section class="section-sm" style="background:var(--white);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:32px;">
+      <div class="section-label fade-up">Van aanvraag tot jouw grote dag</div>
+    </div>
+    <div class="process-mini fade-up">
+      <div class="process-mini-item">
+        <div class="process-mini-emoji">📝</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;">Aanvraag</h4>
+        <p>Stuur het formulier — we reageren binnen 1 werkdag</p>
+      </div>
+      <div class="process-mini-item">
+        <div class="process-mini-emoji">🎨</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;">Design</h4>
+        <p>We maken jouw custom illustratie samen met jou</p>
+      </div>
+      <div class="process-mini-item">
+        <div class="process-mini-emoji">✅</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;">Bevestiging</h4>
+        <p>Datum geboekt, design goedgekeurd — klaar!</p>
+      </div>
+      <div class="process-mini-item">
+        <div class="process-mini-emoji">🎉</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.9rem;">Jouw feest</h4>
+        <p>Wij leveren, bouwen op en verzorgen alles</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact section ── -->
+<section class="section" style="background:var(--beige-1);">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="fade-up">
+        <div class="section-label" style="margin-bottom:16px;">Aanvraagformulier</div>
+        <h2 style="margin-bottom:8px;">Stuur een aanvraag</h2>
+        <p style="font-size:0.9rem;margin-bottom:28px;">Vul het formulier in en we nemen zo snel mogelijk contact op — usually binnen één werkdag.</p>
+
+        <div class="form-card">
+          <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Naam *</label>
+                <input type="text" id="name" class="form-control" placeholder="Jouw naam" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mailadres *</label>
+                <input type="email" id="email" class="form-control" placeholder="jij@email.nl" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Telefoonnummer</label>
+                <input type="tel" id="phone" class="form-control" placeholder="06 12 34 56 78" />
+              </div>
+              <div class="form-group">
+                <label for="eventDate">Datum van het event *</label>
+                <input type="date" id="eventDate" class="form-control" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="eventType">Type event *</label>
+                <select id="eventType" class="form-control" required>
+                  <option value="" disabled selected>Selecteer type</option>
+                  <option value="bruiloft">💍 Bruiloft</option>
+                  <option value="verjaardag">🎂 Verjaardag</option>
+                  <option value="bedrijfsfeest">🏢 Bedrijfsfeest</option>
+                  <option value="jubileum">🎊 Jubileum</option>
+                  <option value="festival">🎪 Festival / Markt</option>
+                  <option value="anders">✦ Anders</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="package">Pakket interesse</label>
+                <select id="package" class="form-control">
+                  <option value="" disabled selected>Welk pakket?</option>
+                  <option value="sticker">🎰 The Sticker (€395)</option>
+                  <option value="mix">🎁 The Mix (€395)</option>
+                  <option value="card">💌 The Card (€395)</option>
+                  <option value="weet-niet">Nog niet zeker</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Locatie event</label>
+              <input type="text" id="location" class="form-control" placeholder="Stad / locatienaam" />
+            </div>
+
+            <div class="form-group">
+              <label for="guests">Verwacht aantal gasten</label>
+              <select id="guests" class="form-control">
+                <option value="" disabled selected>Selecteer</option>
+                <option value="0-50">Minder dan 50</option>
+                <option value="50-100">50 – 100</option>
+                <option value="100-150">100 – 150</option>
+                <option value="150-250">150 – 250</option>
+                <option value="250+">250+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Bericht / extra wensen</label>
+              <textarea id="message" class="form-control" placeholder="Vertel ons over jullie event, thema of speciale wensen..."></textarea>
+            </div>
+
+            <div id="formError" style="display:none;color:#c0392b;font-size:0.88rem;margin-bottom:16px;padding:12px 16px;background:#fff5f5;border-radius:8px;border-left:3px solid #c0392b;">
+              Vul alle verplichte velden in.
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:16px;">
+              Aanvraag versturen →
+            </button>
+            <p style="font-size:0.8rem;color:var(--text-soft);text-align:center;margin-top:12px;">Wij reageren binnen 1 werkdag ✦ Geen verplichtingen</p>
+          </form>
+
+          <div class="success-msg" id="successMsg">
+            <div style="font-size:2.4rem;margin-bottom:12px;">🎉</div>
+            <h3 style="font-family:'DM Sans',sans-serif;color:var(--text);">Aanvraag ontvangen!</h3>
+            <p style="margin-top:8px;font-size:0.95rem;">Bedankt voor jouw bericht. We nemen binnen één werkdag contact op via jouw e-mailadres.</p>
+            <p style="margin-top:8px;font-size:0.88rem;color:var(--text-soft);">Volg ons op <a href="https://instagram.com/momentbox.nl" style="color:var(--beige-3);">@momentbox.nl</a> voor inspiratie!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="fade-up" style="transition-delay:.1s;">
+        <div class="section-label" style="margin-bottom:16px;">Direct contact</div>
+        <h2 style="margin-bottom:8px;">Liever direct contact?</h2>
+        <p style="font-size:0.9rem;margin-bottom:28px;">We zijn ook bereikbaar via e-mail en Instagram.</p>
+
+        <div class="contact-info-card">
+          <div class="contact-info-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <div class="contact-info-label">E-mail</div>
+              <div class="contact-info-value"><a href="mailto:info@momentbox.nl">info@momentbox.nl</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">📸</div>
+            <div>
+              <div class="contact-info-label">Instagram</div>
+              <div class="contact-info-value"><a href="https://instagram.com/momentbox.nl" target="_blank">@momentbox.nl</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-info-label">Gevestigd in</div>
+              <div class="contact-info-value">Bladel, Noord-Brabant<br /><span style="font-size:0.83rem;color:var(--text-soft);">Gratis bezorging binnen 30km</span></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">⏱️</div>
+            <div>
+              <div class="contact-info-label">Reactietijd</div>
+              <div class="contact-info-value">Binnen 1 werkdag</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What happens next -->
+        <div style="margin-top:28px;">
+          <h4 style="font-family:'DM Sans',sans-serif;margin-bottom:16px;font-size:1rem;">Wat gebeurt er na jouw aanvraag?</h4>
+          <div style="space-y:12px;">
+            <div class="process-step" style="padding:14px 0;">
+              <div class="process-num" style="width:36px;height:36px;font-size:0.9rem;">1</div>
+              <div>
+                <p style="font-size:0.88rem;font-weight:600;color:var(--text);">Wij bevestigen beschikbaarheid</p>
+                <p style="font-size:0.82rem;">Binnen 1 werkdag hoor je of jouw datum vrij is.</p>
+              </div>
+            </div>
+            <div class="process-step" style="padding:14px 0;">
+              <div class="process-num" style="width:36px;height:36px;font-size:0.9rem;">2</div>
+              <div>
+                <p style="font-size:0.88rem;font-weight:600;color:var(--text);">Design intake</p>
+                <p style="font-size:0.82rem;">We plannen een kort gesprek over jullie stijl en wensen.</p>
+              </div>
+            </div>
+            <div class="process-step" style="padding:14px 0;">
+              <div class="process-num" style="width:36px;height:36px;font-size:0.9rem;">3</div>
+              <div>
+                <p style="font-size:0.88rem;font-weight:600;color:var(--text);">Bevestiging &amp; betaling</p>
+                <p style="font-size:0.82rem;">Na goedkeuring van het design sturen we een factuur.</p>
+              </div>
+            </div>
+            <div class="process-step" style="padding:14px 0;border:none;">
+              <div class="process-num" style="width:36px;height:36px;font-size:0.9rem;">4</div>
+              <div>
+                <p style="font-size:0.88rem;font-weight:600;color:var(--text);">Jouw feest! 🎉</p>
+                <p style="font-size:0.82rem;">Wij staan op de dag klaar met alles inbegrepen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instagram teaser -->
+        <div style="background:linear-gradient(135deg,var(--terra),var(--rose));border-radius:var(--radius-md);padding:24px;margin-top:24px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">📸</div>
+          <p style="color:white;font-weight:600;font-size:0.95rem;margin-bottom:4px;">Volg ons op Instagram</p>
+          <p style="color:rgba(255,255,255,.8);font-size:0.85rem;margin-bottom:14px;">Zie echte events en laat je inspireren door onze custom designs</p>
+          <a href="https://instagram.com/momentbox.nl" target="_blank" class="btn btn-white btn-sm">@momentbox.nl →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ teaser ── -->
+<section class="section-sm" style="background:var(--beige-2);">
+  <div class="container text-center">
+    <div class="section-label fade-up" style="justify-content:center;">Nog vragen?</div>
+    <h2 class="fade-up" style="margin-bottom:12px;">Bekijk de veelgestelde vragen</h2>
+    <p class="fade-up" style="max-width:440px;margin:0 auto 28px;">Op de pakketpagina vind je antwoorden op de meest gestelde vragen over bezorging, design en beschikbaarheid.</p>
+    <a href="pakketten.html#faq" class="btn btn-secondary fade-up">Naar de FAQ →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo">Moment<span>box</span></div>
+      <p>Een muntje. Een moment. Voor altijd.</p>
+      <p style="margin-top:12px;">📍 Noord-Brabant · 📧 <a href="mailto:info@momentbox.nl" style="color:var(--beige-3);">info@momentbox.nl</a></p>
+      <p>📸 <a href="https://instagram.com/momentbox.nl" style="color:var(--beige-3);">@momentbox.nl</a></p>
+    </div>
+    <div class="footer-links">
+      <h4>Pagina's</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stickerbooth.html">Sticker Booth</a></li>
+        <li><a href="greetingcardbooth.html">Greeting Card Booth</a></li>
+        <li><a href="pakketten.html">Pakketten</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@momentbox.nl">info@momentbox.nl</a></li>
+        <li><a href="https://instagram.com/momentbox.nl">@momentbox.nl</a></li>
+        <li><a href="pakketten.html">Pakketten bekijken</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Momentbox · Noord-Brabant</span>
+    <span style="color:var(--beige-3);">✦ Momentbox boeken Noord-Brabant</span>
+  </div>
+</footer>
+
+<script>
+  function openMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const date = document.getElementById('eventDate').value;
+    const type = document.getElementById('eventType').value;
+    const err = document.getElementById('formError');
+
+    if (!name || !email || !date || !type) {
+      err.style.display = 'block';
+      return;
+    }
+    err.style.display = 'none';
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('successMsg').classList.add('show');
+    window.scrollTo({ top: document.getElementById('successMsg').offsetTop - 100, behavior: 'smooth' });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

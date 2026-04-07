@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakketten & Prijzen | Vending Machine Huren — Momentbox</title>
+  <meta name="description" content="Bekijk alle Momentbox pakketten voor sticker en kaartjes automaat verhuur. Bruiloft entertainment pakketten vanaf €375 all-in — inclusief custom design, munten, opbouw en afbouw. Noord-Brabant." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .all-includes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 40px 0;
+    }
+    .include-item {
+      background: var(--white);
+      border: 1px solid var(--beige-3);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+    }
+    .include-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .include-item p { font-size: 0.85rem; margin-top: 6px; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--beige-3);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      text-align: left;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q:hover { background: var(--beige-2); }
+    .faq-icon { font-size: 1.2rem; color: var(--terra); transition: transform 0.3s; }
+    .faq-a {
+      display: none;
+      padding: 0 24px 20px;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .packages-big {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .pkg-big {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 2px solid var(--beige-3);
+      background: var(--white);
+      transition: all var(--transition);
+    }
+    .pkg-big:hover { border-color: var(--terra); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .pkg-big.featured { border-color: var(--terra); box-shadow: var(--shadow-md); }
+    .pkg-head {
+      padding: 32px 28px 24px;
+      background: var(--beige-2);
+      border-bottom: 1px solid var(--beige-3);
+    }
+    .pkg-big.featured .pkg-head {
+      background: linear-gradient(135deg, rgba(212,149,106,.12), var(--beige-2));
+    }
+    .pkg-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 12px 0 4px;
+    }
+    .pkg-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--terra);
+      line-height: 1;
+    }
+    .pkg-body { padding: 28px; }
+    @media (max-width: 900px) {
+      .packages-big { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .all-includes { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .all-includes { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav-inner">
+    <!-- Left links -->
+    <ul class="nav-links nav-links-left">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="stickerbooth.html">Sticker Booth</a></li>
+      <li><a href="greetingcardbooth.html">Greeting Card Booth</a></li>
+    </ul>
+
+    <!-- Center logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Momentpunt" />
+    </a>
+
+    <!-- Right links -->
+    <ul class="nav-links nav-links-right">
+      <li><a href="pakketten.html" class="active">Pakketten</a></li>
+      <li><a href="https://instagram.com/momentpunt.nl" class="nav-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a></li>
+      <li><a href="https://tiktok.com/@momentpunt.nl" class="nav-icon" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.52V6.76a4.84 4.84 0 01-1.02-.07z"/></svg></a></li>
+      <li><a href="contact.html" class="btn btn-primary btn-sm nav-cta">Book Now</a></li>
+    </ul>
+
+    <button class="hamburger" onclick="openMenu()" aria-label="Menu openen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="stickerbooth.html" onclick="closeMenu()">Sticker Booth</a>
+  <a href="greetingcardbooth.html" onclick="closeMenu()">Greeting Card Booth</a>
+  <a href="pakketten.html" onclick="closeMenu()">Pakketten</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<div class="nav-offset"></div>
+
+<!-- ── Hero ── -->
+<section style="background:var(--beige-3);padding:72px 0 56px;position:relative;overflow:hidden;">
+  <div class="container text-center" style="position:relative;z-index:2;">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:rgba(26,24,18,.6);margin-bottom:16px;">Pakketten &amp; Prijzen</p>
+    <h1 class="fade-up">Alles inbegrepen.<br /><em>Eerlijk geprijsd.</em></h1>
+    <p class="fade-up" style="max-width:520px;margin:20px auto 0;font-size:1.05rem;color:var(--text-mid);line-height:1.75;">
+      Geen verborgen kosten, geen verrassingen. Eén prijs — alles erin. Kies het pakket dat past bij jouw event.
+    </p>
+  </div>
+</section>
+
+<!-- ── All-includes ── -->
+<section class="section-sm" style="background:var(--white);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:32px;">
+      <div class="section-label fade-up">Altijd inbegrepen</div>
+      <h2 class="fade-up">Alles inbegrepen — eerlijk geprijsd</h2>
+    </div>
+    <div class="all-includes fade-up">
+      <div class="include-item">
+        <div class="include-icon">🎨</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.95rem;">Custom illustratie</h4>
+        <p>Speciaal getekend voor jouw event</p>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🪙</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.95rem;">Speelmunten</h4>
+        <p>Voor al jouw gasten</p>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🎰</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.95rem;">Retro vending machine</h4>
+        <p>Inclusief custom front panel</p>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🚚</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.95rem;">Bezorging op locatie</h4>
+        <p>Binnen 30km van Bladel gratis</p>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🔧</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.95rem;">Opbouw &amp; afbouw</h4>
+        <p>Wij regelen alles op locatie</p>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">📞</div>
+        <h4 style="font-family:'DM Sans',sans-serif;font-size:0.95rem;">Persoonlijk contact</h4>
+        <p>Van aanvraag tot de grote dag</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Packages ── -->
+<section class="section" style="background:var(--beige-1);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:52px;">
+      <div class="section-label fade-up">Kies jouw pakket</div>
+      <h2 class="fade-up">Drie pakketten. Sticker &amp; kaartjes verhuur.</h2>
+    </div>
+
+    <div class="packages-big">
+
+      <!-- Sticker -->
+      <div class="pkg-big fade-up" style="transition-delay:0s;">
+        <div class="pkg-head">
+          <div style="font-size:2.6rem;margin-bottom:10px;">🎰</div>
+          <h3>The Sticker</h3>
+          <p style="font-size:0.88rem;color:var(--text-mid);margin-top:6px;">Custom stickers uit een retro muntautomaat</p>
+          <div class="pkg-price-row">
+            <span class="pkg-price">€375</span>
+            <span style="color:var(--text-soft);font-size:0.85rem;">eenmalig all-in</span>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <ul class="feature-list">
+            <li>Custom geïllustreerde stickers (eigen design)</li>
+            <li>Kies uit 30+ sticker thema's</li>
+            <li>Retro muntautomaat op jouw locatie</li>
+            <li>Custom front panel insert</li>
+            <li>Speelmunten voor alle gasten</li>
+            <li>Bezorging, opbouw &amp; afbouw</li>
+            <li>1 custom illustratie design inbegrepen</li>
+            <li>Persoonlijk contact &amp; design afstemming</li>
+          </ul>
+          <a href="stickerbooth.html" class="btn btn-secondary" style="margin-top:24px;width:100%;justify-content:center;">Meer over Sticker Booth</a>
+          <a href="contact.html" class="btn btn-primary btn-sm" style="margin-top:10px;width:100%;justify-content:center;">Dit pakket boeken</a>
+        </div>
+      </div>
+
+      <!-- Mix (featured) -->
+      <div class="pkg-big featured fade-up" style="transition-delay:.1s;">
+        <div style="background:var(--beige-3);color:var(--text);text-align:center;padding:8px;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">
+          ✦ Populairste keuze
+        </div>
+        <div class="pkg-head" style="background:var(--beige-2);">
+          <div style="font-size:2.6rem;margin-bottom:10px;">🎁</div>
+          <h3>The Mix</h3>
+          <p style="font-size:0.88rem;color:var(--text-mid);margin-top:6px;">Stickers én kaartjes — één machine, dubbel plezier</p>
+          <div class="pkg-price-row">
+            <span class="pkg-price">€425</span>
+            <span style="color:var(--text-soft);font-size:0.85rem;">eenmalig all-in</span>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <ul class="feature-list">
+            <li>Custom stickers én greeting cards in één machine</li>
+            <li>Twee slots in de automaat (sticker + kaart)</li>
+            <li>Custom front panel insert</li>
+            <li>Speelmunten voor alle gasten</li>
+            <li>Bezorging, opbouw &amp; afbouw</li>
+            <li>1 custom design per producttype inbegrepen</li>
+            <li>Persoonlijk contact &amp; design afstemming</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;">Mix pakket boeken</a>
+          <a href="contact.html" class="btn btn-secondary btn-sm" style="margin-top:10px;width:100%;justify-content:center;">Vragen? Neem contact op</a>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="pkg-big fade-up" style="transition-delay:.2s;">
+        <div class="pkg-head">
+          <div style="font-size:2.6rem;margin-bottom:10px;">💌</div>
+          <h3>The Card</h3>
+          <p style="font-size:0.88rem;color:var(--text-mid);margin-top:6px;">Custom greeting cards — het perfecte gastenboek alternatief</p>
+          <div class="pkg-price-row">
+            <span class="pkg-price">€375</span>
+            <span style="color:var(--text-soft);font-size:0.85rem;">eenmalig all-in</span>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <ul class="feature-list">
+            <li>Custom geïllustreerde greeting cards</li>
+            <li>Retro muntautomaat op jouw locatie</li>
+            <li>Custom front panel insert</li>
+            <li>Speelmunten voor alle gasten</li>
+            <li>Bezorging, opbouw &amp; afbouw</li>
+            <li>1 custom illustratie design inbegrepen</li>
+            <li>Persoonlijk contact &amp; design afstemming</li>
+            <li>Optioneel: card rack add-on (+€89)</li>
+          </ul>
+          <a href="greetingcardbooth.html" class="btn btn-secondary" style="margin-top:24px;width:100%;justify-content:center;">Meer over Card Booth</a>
+          <a href="contact.html" class="btn btn-primary btn-sm" style="margin-top:10px;width:100%;justify-content:center;">Dit pakket boeken</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Add-ons ── -->
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <div class="section-label fade-up">Add-ons &amp; extra's</div>
+      <h2 class="fade-up">Maak het pakket helemaal van jou</h2>
+      <p class="fade-up" style="max-width:480px;margin:14px auto 0;">Alle add-ons zijn optioneel en worden op jouw verzoek toegevoegd aan jouw pakket.</p>
+    </div>
+
+    <div class="addons-table fade-up" style="max-width:680px;margin:0 auto;">
+      <div class="addon-row">
+        <div>
+          <strong>Extra custom design</strong>
+          <p style="font-size:0.82rem;color:var(--text-soft);margin-top:2px;">Een tweede uniek illustratie ontwerp voor jouw event</p>
+        </div>
+        <span class="addon-price">+ €75</span>
+      </div>
+      <div class="addon-row">
+        <div>
+          <strong>Extra speelmunten</strong>
+          <p style="font-size:0.82rem;color:var(--text-soft);margin-top:2px;">Voor grotere gezelschappen of extra rondes</p>
+        </div>
+        <span class="addon-price">+ €30</span>
+      </div>
+      <div class="addon-row">
+        <div>
+          <strong>Custom enveloppen</strong>
+          <p style="font-size:0.82rem;color:var(--text-soft);margin-top:2px;">Stijlvolle enveloppen bij de greeting cards — perfect voor het inleveren</p>
+        </div>
+        <span class="addon-price">+ €50</span>
+      </div>
+      <div class="addon-row">
+        <div>
+          <strong>Reiskosten buiten 30km van Bladel</strong>
+          <p style="font-size:0.82rem;color:var(--text-soft);margin-top:2px;">Bezorging buiten de standaard reisradius</p>
+        </div>
+        <span class="addon-price">+ €0,30/km</span>
+      </div>
+      <div class="addon-row">
+        <div>
+          <strong>Spoedontwerp (minder dan 2 weken)</strong>
+          <p style="font-size:0.82rem;color:var(--text-soft);margin-top:2px;">Heb je snel een Momentbox nodig? We doen ons best — tegen een toeslag.</p>
+        </div>
+        <span class="addon-price">+ €50</span>
+      </div>
+      <div class="addon-row">
+        <div>
+          <strong>Card rack (kaartjeshouder)</strong>
+          <p style="font-size:0.82rem;color:var(--text-soft);margin-top:2px;">Stijlvolle houten kaartjeshouder om ingeleverde wenskaarten te presenteren</p>
+        </div>
+        <span class="addon-price">+ €89</span>
+      </div>
+      <div class="addon-row">        <div>
+          <strong>Extra machine slot</strong>
+          <p style="font-size:0.82rem;color:var(--text-soft);margin-top:2px;">Een derde producttype in de automaat — voor nóg meer variatie</p>
+        </div>
+        <span class="addon-price">+ €60</span>
+      </div>
+    </div>
+
+    <div class="info-box fade-up" style="max-width:680px;margin:24px auto 0;">
+      <strong style="color:var(--beige-3);">💡 Wil je een offerte op maat?</strong><br />
+      Stuur ons een bericht via de <a href="contact.html" style="color:var(--beige-3);font-weight:600;">contactpagina</a> met jouw event details — dan maken wij een persoonlijk voorstel voor je.
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section" style="background:var(--beige-2);">
+  <div class="container" style="max-width:720px;">
+    <div class="text-center" style="margin-bottom:48px;">
+      <div class="section-label fade-up">Veelgestelde vragen</div>
+      <h2 class="fade-up">Alles wat je wil weten over vending machine verhuur</h2>
+    </div>
+
+    <div class="fade-up">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Hoe vroeg op voorhand moet ik boeken?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Wij raden aan om minimaal 6–8 weken van tevoren te boeken zodat er voldoende tijd is voor het design proces. Minder dan 2 weken? Dat kan soms, maar er geldt dan een spoedtoeslag van €50.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Werkt de automaat ook voor grote feesten?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Absoluut. De automaat werkt voor feesten van 20 tot 400+ gasten. We zorgen voor voldoende speelmunten en de automaat is snel om te bedienen — lange rijen hoeven geen probleem te zijn.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Kan ik de stickers of kaartjes volledig zelf ontwerpen?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Het ontwerp wordt gemaakt door onze illustrator op basis van jouw wensen, stijl en thema. Jij geeft input en wij maken het werkelijkheid — inclusief feedbackrondes totdat je er blij mee bent.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Hoe ver rijden jullie voor bezorging?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Wij zijn gevestigd in Bladel (Noord-Brabant) en bezorgen gratis binnen 30km. Buiten die straal rekenen we €0,30 per extra kilometer. Nederland-breed is dus gewoon mogelijk.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Hoe lang staat de automaat op locatie?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">De automaat staat de hele dag/avond bij jullie event — van opbouw voor aanvang tot afbouw na afloop. We bespreken de exacte tijden vooraf in overleg met de locatie.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Zijn de pakketten ook voor verjaardagen en bedrijfsfeesten?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Zeker! Momentbox is niet alleen voor bruiloften. Wij doen ook verjaardagen, jubilea, bedrijfsfeesten, festivals en andere vieringen. Het ontwerp past zich aan aan het thema van jouw event.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="cta-banner fade-up">
+      <span style="font-size:2.2rem;display:block;margin-bottom:12px;">🎉</span>
+      <h2>Klaar om jouw Momentbox te boeken?</h2>
+      <p>Stuur een aanvraag via het contactformulier en we nemen zo snel mogelijk contact op — usually binnen één werkdag.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
+        <a href="contact.html" class="btn btn-secondary">Aanvraag sturen</a>
+        <a href="mailto:info@momentpunt.nl" class="btn btn-secondary">📧 info@momentpunt.nl</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html"><img src="images/logo.png" alt="Momentpunt" class="footer-logo-img" /></a>
+      <p>Een muntje. Een moment. Voor altijd.<br />Custom sticker &amp; kaartjesautomaten voor de mooiste momenten.</p>
+      <p style="margin-top:12px; color:var(--text-mid);">📍 Noord-Brabant, Nederland</p>
+      <p style="margin-top:4px;"><a href="mailto:info@momentpunt.nl" style="color:var(--text);">info@momentpunt.nl</a></p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/momentpunt.nl" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+        <a href="https://tiktok.com/@momentpunt.nl" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.52V6.76a4.84 4.84 0 01-1.02-.07z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Pagina's</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stickerbooth.html">Sticker Booth</a></li>
+        <li><a href="greetingcardbooth.html">Greeting Card Booth</a></li>
+        <li><a href="pakketten.html">Pakketten &amp; Prijzen</a></li>
+        <li><a href="contact.html">Contact &amp; Boeken</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Events</h4>
+      <ul>
+        <li><a href="stickerbooth.html">Bruiloft entertainment</a></li>
+        <li><a href="greetingcardbooth.html">Gastenboek alternatief</a></li>
+        <li><a href="pakketten.html">Bruiloft pakketten</a></li>
+        <li><a href="contact.html">Offerte aanvragen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Momentpunt · Noord-Brabant</span>
+    <span>✦ vending machine huren bruiloft</span>
+  </div>
+</footer>
+
+<script>
+  function openMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

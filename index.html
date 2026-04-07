@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momentbox — Sticker & Kaartjes Automaat Verhuur voor Bruiloften & Feesten</title>
+  <meta name="description" content="Verhuur van sticker- en kaartjesautomaten voor bruiloften, verjaardagen en bedrijfsfeesten in Nederland. Uniek bruiloft entertainment met custom illustraties. Al vanaf €375." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <!-- Left links -->
+    <ul class="nav-links nav-links-left">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="stickerbooth.html">Sticker Booth</a></li>
+      <li><a href="greetingcardbooth.html">Greeting Card Booth</a></li>
+    </ul>
+
+    <!-- Center logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Momentpunt" />
+    </a>
+
+    <!-- Right links -->
+    <ul class="nav-links nav-links-right">
+      <li><a href="pakketten.html">Pakketten</a></li>
+      <li><a href="https://instagram.com/momentpunt.nl" class="nav-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a></li>
+      <li><a href="https://tiktok.com/@momentpunt.nl" class="nav-icon" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.52V6.76a4.84 4.84 0 01-1.02-.07z"/></svg></a></li>
+      <li><a href="contact.html" class="btn btn-primary btn-sm nav-cta">Book Now</a></li>
+    </ul>
+
+    <button class="hamburger" onclick="openMenu()" aria-label="Menu openen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="stickerbooth.html" onclick="closeMenu()">Sticker Booth</a>
+  <a href="greetingcardbooth.html" onclick="closeMenu()">Greeting Card Booth</a>
+  <a href="pakketten.html" onclick="closeMenu()">Pakketten</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="images/hero-wedding.jpg" alt="Momentbox op een bruiloft" />
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <span class="eyebrow">⚡ Beperkte datums beschikbaar · Noord-Brabant &amp; Heel Nederland</span>
+    <h1 style="max-width:900px; margin: 0 auto 28px; line-height:1.08;">
+      Geef jouw gasten iets<br />dat ze nooit vergeten.
+    </h1>
+    <p class="lead" style="margin: 0 auto 48px;">
+      Custom sticker- &amp; kaartjesautomaten, speciaal geïllustreerd voor jullie dag. Het uniekste bruiloft entertainment in Nederland — tastbaar, uniek en onvergetelijk.
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="pakketten.html" class="btn btn-primary">Bekijk pakketten</a>
+      <a href="contact.html" class="btn btn-ghost">Boek jouw datum</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Editorial split: Mix (real photo) ── -->
+<div class="split-section">
+  <div class="split-media" style="background:#FFF9CC;">
+    <img src="images/machine-garden.jpg" alt="Momentbox mix pakket in een tuin" />
+  </div>
+  <div class="split-text">
+    <span class="section-label">Het Mix Pakket</span>
+    <h2>Stickers én kaartjes — één machine, dubbel plezier</h2>
+    <p>De meest gekozen keuze: één retro vending machine met twee slots. Gasten kiezen zelf — een custom geïllustreerde sticker of een persoonlijke greeting card om op te schrijven.</p>
+    <p>Speciaal getekend voor jullie dag. Eén prijs, alles inbegrepen.</p>
+    <a href="pakketten.html" class="btn btn-primary" style="margin-right:12px;">Bekijk pakketten</a>
+    <a href="contact.html" class="btn btn-secondary">Aanvragen</a>
+  </div>
+</div>
+
+<!-- ── Editorial split: Card Booth (reverse) ── -->
+<div class="split-section split-reverse">
+  <div class="split-media" style="background:#FFF5CC;">
+    <img src="images/greeting-card-booth.jpg" alt="Greeting Card Booth machine" />
+  </div>
+  <div class="split-text">
+    <span class="section-label">Greeting Card Booth</span>
+    <h2>Een gastenboek dat gasten nooit vergeten</h2>
+    <p>Elke gast vendt een custom geïllustreerde kaart en schrijft een persoonlijke wens op de achterkant. Na het feest heb je een uniek handgeschreven gastenboek — elke kaart een eigen verhaal.</p>
+    <p>Traditionele gastenboeken verdwijnen in een la. Dit bewaar je voor altijd.</p>
+    <a href="greetingcardbooth.html" class="btn btn-secondary">Ontdek de Card Booth</a>
+  </div>
+</div>
+
+<!-- ── How it works ── -->
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Zo werkt het</span>
+      <h2 style="max-width:680px; margin: 0 auto;">Van munt tot herinnering</h2>
+    </div>
+
+    <div class="steps-editorial">
+      <div class="step-editorial">
+        <span class="step-n">01</span>
+        <h4>Gast krijgt een muntje</h4>
+        <p style="font-size:0.92rem; margin-top:10px;">Elke gast krijgt bij binnenkomst een speciaal Momentbox-muntstuk — al inbegrepen in het pakket.</p>
+      </div>
+      <div class="step-editorial">
+        <span class="step-n">02</span>
+        <h4>Het muntje gaat erin</h4>
+        <p style="font-size:0.92rem; margin-top:10px;">De gast loopt naar de automaat, gooit het muntje erin en draait de hendel. Een moment vol verwachting.</p>
+      </div>
+      <div class="step-editorial">
+        <span class="step-n">03</span>
+        <h4>Sticker of kaartje!</h4>
+        <p style="font-size:0.92rem; margin-top:10px;">Een custom geïllustreerde sticker of greeting card verschijnt — speciaal getekend voor jouw event.</p>
+      </div>
+      <div class="step-editorial">
+        <span class="step-n">04</span>
+        <h4>Een blijvende herinnering</h4>
+        <p style="font-size:0.92rem; margin-top:10px;">De sticker gaat op de koelkast. De kaart met wens gaat in een doos. Een aandenken dat echt bijblijft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Photo gallery ── -->
+<section class="photo-section">
+  <div class="photo-section-header">
+    <span class="section-label">Gasten aan het genieten</span>
+    <h2 style="max-width:560px;">Zo ziet het eruit op jouw feest</h2>
+  </div>
+
+  <div class="photo-grid">
+    <div class="photo-item fade-up">
+      <!-- <img src="photos/machine-locatie.jpg" alt="Momentbox op locatie" /> -->
+      <div class="photo-placeholder">
+        <div class="photo-placeholder-emoji">🎰</div>
+        <div class="photo-placeholder-label">De machine op locatie</div>
+      </div>
+      <div class="photo-caption">De machine staat er mooi bij</div>
+    </div>
+
+    <div class="photo-item fade-up" style="transition-delay:.06s;">
+      <!-- <img src="photos/munt-gooien.jpg" alt="Gast gooit een munt" /> -->
+      <div class="photo-placeholder">
+        <div class="photo-placeholder-emoji">🪙</div>
+        <div class="photo-placeholder-label">Het muntje gaat erin</div>
+      </div>
+      <div class="photo-caption">Een moment vol verwachting</div>
+    </div>
+
+    <div class="photo-item fade-up" style="transition-delay:.10s;">
+      <!-- <img src="photos/sticker-verrassing.jpg" alt="De verrassing" /> -->
+      <div class="photo-placeholder">
+        <div class="photo-placeholder-emoji">🤩</div>
+        <div class="photo-placeholder-label">De verrassing komt eruit</div>
+      </div>
+      <div class="photo-caption">Altijd een glimlach</div>
+    </div>
+
+    <div class="photo-item fade-up" style="transition-delay:.14s;">
+      <!-- <img src="photos/gasten-groep.jpg" alt="Gasten bij de Momentbox" /> -->
+      <div class="photo-placeholder">
+        <div class="photo-placeholder-emoji">🥂</div>
+        <div class="photo-placeholder-label">Gezellig met het hele gezelschap</div>
+      </div>
+      <div class="photo-caption">Brengt mensen samen</div>
+    </div>
+
+    <div class="photo-item fade-up" style="transition-delay:.18s;">
+      <!-- <img src="photos/sticker-detail.jpg" alt="Custom sticker detail" /> -->
+      <div class="photo-placeholder">
+        <div class="photo-placeholder-emoji">✨</div>
+        <div class="photo-placeholder-label">Custom illustratie, speciaal voor jullie</div>
+      </div>
+      <div class="photo-caption">Elk detail, uniek</div>
+    </div>
+  </div>
+
+  <div style="padding:40px 40px 0; max-width:1200px; margin:0 auto;">
+    <p style="font-size:0.82rem; color:var(--text-soft); font-style:italic;">
+      Foto's van echte events volgen binnenkort &nbsp;·&nbsp;
+      <a href="https://instagram.com/momentbox.nl" style="color:var(--terra);">Volg ons op @momentbox.nl</a>
+    </p>
+  </div>
+</section>
+
+<!-- ── Packages ── -->
+<section class="section" style="background:var(--beige-1);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:80px;">
+      <span class="section-label">Pakketten</span>
+      <h2>Alles inbegrepen,<br />geen verrassingen</h2>
+      <p style="max-width:480px; margin:20px auto 0;">Bezorging, opbouw, afbouw, custom design en speelmunten voor al je gasten — voor een vast bedrag.</p>
+    </div>
+
+    <div class="packages-grid">
+
+      <div class="package-card fade-up">
+        <div class="package-header">
+          <span class="section-label">The Sticker</span>
+          <h3 style="margin-bottom:8px;">Sticker Booth</h3>
+          <p style="font-size:0.9rem;">Custom stickers uit een retro muntautomaat</p>
+          <div class="package-price">€375</div>
+          <p style="font-size:0.78rem; color:var(--text-soft); margin-top:4px;">eenmalig, all-in</p>
+        </div>
+        <div class="package-body">
+          <ul class="feature-list">
+            <li>Custom geïllustreerde stickers</li>
+            <li>Kies uit 30+ sticker thema's</li>
+            <li>Retro muntautomaat op locatie</li>
+            <li>Speciaal front panel insert</li>
+            <li>Speelmunten voor al jouw gasten</li>
+            <li>Bezorging, opbouw &amp; afbouw</li>
+            <li>1 custom design inbegrepen</li>
+          </ul>
+          <a href="stickerbooth.html" class="btn btn-secondary" style="margin-top:32px; width:100%; justify-content:center;">Meer over Sticker Booth</a>
+        </div>
+      </div>
+
+      <div class="package-card featured fade-up" style="transition-delay:.1s;">
+        <div class="package-header">
+          <span class="section-label">Populairste keuze</span>
+          <h3 style="margin-bottom:8px;">Mix Pakket</h3>
+          <p style="font-size:0.9rem;">Stickers én kaartjes — het complete pakket</p>
+          <div class="package-price">€425</div>
+          <p style="font-size:0.78rem; color:var(--text-soft); margin-top:4px;">eenmalig, all-in</p>
+        </div>
+        <div class="package-body">
+          <ul class="feature-list">
+            <li>Custom stickers én greeting cards</li>
+            <li>Één machine, twee slots</li>
+            <li>Speciaal front panel insert</li>
+            <li>Speelmunten voor al jouw gasten</li>
+            <li>Bezorging, opbouw &amp; afbouw</li>
+            <li>1 custom design per type</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:32px; width:100%; justify-content:center;">Boek dit pakket</a>
+        </div>
+      </div>
+
+      <div class="package-card fade-up" style="transition-delay:.2s;">
+        <div class="package-header">
+          <span class="section-label">The Card</span>
+          <h3 style="margin-bottom:8px;">Greeting Card Booth</h3>
+          <p style="font-size:0.9rem;">Gepersonaliseerde kaartjes als uniek gastenboek</p>
+          <div class="package-price">€375</div>
+          <p style="font-size:0.78rem; color:var(--text-soft); margin-top:4px;">eenmalig, all-in</p>
+        </div>
+        <div class="package-body">
+          <ul class="feature-list">
+            <li>Custom geïllustreerde greeting cards</li>
+            <li>Retro muntautomaat op locatie</li>
+            <li>Speciaal front panel insert</li>
+            <li>Speelmunten voor al jouw gasten</li>
+            <li>Bezorging, opbouw &amp; afbouw</li>
+            <li>1 custom design inbegrepen</li>
+          </ul>
+          <a href="greetingcardbooth.html" class="btn btn-secondary" style="margin-top:32px; width:100%; justify-content:center;">Meer over Card Booth</a>
+        </div>
+      </div>
+
+    </div>
+    <p class="text-center" style="margin-top:40px; font-size:0.85rem; color:var(--text-soft);">
+      Alle add-ons en extra opties op de <a href="pakketten.html" style="color:var(--text); font-weight:600; border-bottom:1px solid var(--beige-3);">pakketpagina →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ── Why Momentbox ── -->
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Waarom Momentbox</span>
+      <h2>Een moment dat bijblijft</h2>
+    </div>
+
+    <div class="usp-grid">
+      <div class="usp-card fade-up">
+        <div class="usp-icon">🥇</div>
+        <h4>Eerste in Nederland</h4>
+        <p style="font-size:0.92rem; margin-top:10px;">Momentbox is pionier in bruiloft vending machine verhuur. Jouw gasten hebben dit nóóit eerder gezien — gegarandeerd gespreksonderwerp.</p>
+      </div>
+      <div class="usp-card fade-up" style="transition-delay:.1s;">
+        <div class="usp-icon">🎨</div>
+        <h4>100% Custom illustraties</h4>
+        <p style="font-size:0.92rem; margin-top:10px;">Elk design wordt speciaal voor jouw event getekend. Jouw kleuren, stijl, verhaal — op elke sticker of kaart.</p>
+      </div>
+      <div class="usp-card fade-up" style="transition-delay:.2s;">
+        <div class="usp-icon">👨‍👩‍👧‍👦</div>
+        <h4>Leuk voor alle leeftijden</h4>
+        <p style="font-size:0.92rem; margin-top:10px;">Van de kleinste kinderen tot de oudste opa's — de automaat brengt iedereen samen met een glimlach.</p>
+      </div>
+      <div class="usp-card fade-up" style="transition-delay:.3s;">
+        <div class="usp-icon">🏡</div>
+        <h4>Een aandenken om te bewaren</h4>
+        <p style="font-size:0.92rem; margin-top:10px;">Stickers op de koelkast, kaartjes in een doosje — jouw gasten bewaren het echt. Geen digitale foto die verdwijnt tussen de rest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="section" style="background:var(--white); padding-top:0;">
+  <div class="container">
+    <div class="cta-banner">
+      <span class="eyebrow">Klaar om te boeken?</span>
+      <h2>Verras jouw gasten met<br />een onvergetelijk moment</h2>
+      <p>Vertel ons over jouw feest — wij zorgen voor de rest. Van custom ontwerp tot bezorging op de dag zelf.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-secondary">Stuur een aanvraag</a>
+        <a href="pakketten.html" class="btn btn-secondary">Bekijk pakketten</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html"><img src="images/logo.png" alt="Momentpunt" class="footer-logo-img" /></a>
+      <p>Een muntje. Een moment. Voor altijd.<br />Custom sticker &amp; kaartjesautomaten voor de mooiste momenten.</p>
+      <p style="margin-top:12px; color:var(--text-mid);">📍 Noord-Brabant, Nederland</p>
+      <p style="margin-top:4px;"><a href="mailto:info@momentpunt.nl" style="color:var(--text);">info@momentpunt.nl</a></p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/momentpunt.nl" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+        <a href="https://tiktok.com/@momentpunt.nl" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.52V6.76a4.84 4.84 0 01-1.02-.07z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Pagina's</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stickerbooth.html">Sticker Booth</a></li>
+        <li><a href="greetingcardbooth.html">Greeting Card Booth</a></li>
+        <li><a href="pakketten.html">Pakketten &amp; Prijzen</a></li>
+        <li><a href="contact.html">Contact &amp; Boeken</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Events</h4>
+      <ul>
+        <li><a href="stickerbooth.html">Bruiloft entertainment</a></li>
+        <li><a href="greetingcardbooth.html">Gastenboek alternatief</a></li>
+        <li><a href="pakketten.html">Bruiloft pakketten</a></li>
+        <li><a href="contact.html">Offerte aanvragen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Momentpunt · Noord-Brabant</span>
+    <span>Een muntje. Een moment. Voor altijd.</span>
+  </div>
+</footer>
+
+<script>
+  function openMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // Transparent → white nav on scroll
+  const nav = document.getElementById('mainNav');
+  const heroHeight = () => window.innerHeight - 10;
+
+  function updateNav() {
+    if (window.scrollY >= heroHeight()) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

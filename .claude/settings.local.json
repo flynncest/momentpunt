@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m http.server 8080)",
+      "Bash(echo \"Server started with PID $!\")",
+      "Bash(open:*)",
+      "WebFetch(domain:pauliandsisters.com)",
+      "Bash(cp \"/Users/yapyunghui/Downloads/0217755627875977afbd658227445da69c5198dc2d1b708ed9d63_0.jpeg\" /Users/yapyunghui/claude/momentbox/images/hero-wedding.jpg)",
+      "Bash(cp \"/Users/yapyunghui/Downloads/021775564016600b3d24476cb0847a2446e1bf5e527b37be69c92_0.jpeg\" /Users/yapyunghui/claude/momentbox/images/machine-garden.jpg)",
+      "Bash(cp \"/Users/yapyunghui/Downloads/Vintage Modern Cursive Brand Logo \\(1\\).png\" /Users/yapyunghui/claude/momentbox/images/logo.png)",
+      "Bash(python3:*)",
+      "Bash(cp \"/Users/yapyunghui/Downloads/Vintage Modern Cursive Brand Logo \\(3\\).png\" /Users/yapyunghui/claude/momentbox/images/logo.png)",
+      "Bash(cp \"/Users/yapyunghui/Downloads/0217755734486241386b9a8ed856c57501cfa946ce34c98fc4cce_0.jpeg\" /Users/yapyunghui/claude/momentbox/images/greeting-card-booth.jpg)",
+      "Bash(grep:*)",
+      "Bash(ls -lt /Users/yapyunghui/Downloads/*.jpeg /Users/yapyunghui/Downloads/*.jpg /Users/yapyunghui/Downloads/*.png)",
+      "Bash(gh auth:*)",
+      "Bash(git --version)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)"
+    ]
+  }
+}

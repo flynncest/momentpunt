@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sticker Booth Huren | Custom Sticker Automaat voor Bruiloft & Feest — Momentbox</title>
+  <meta name="description" content="Huur een sticker vending machine voor jouw bruiloft of feest. Custom geïllustreerde stickers speciaal voor jouw event. Interactief bruiloft entertainment in Nederland — al vanaf €375 all-in." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .sticker-showcase {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 32px 0;
+    }
+    .sticker-item {
+      width: 90px; height: 90px;
+      background: var(--beige-2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      border: 2px dashed var(--beige-4);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition);
+    }
+    .sticker-item:nth-child(odd) { transform: rotate(-5deg); }
+    .sticker-item:nth-child(even) { transform: rotate(4deg); }
+    .sticker-item:hover { transform: rotate(0deg) scale(1.12); }
+    .loves-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .love-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      text-align: center;
+      border: 1px solid var(--beige-3);
+    }
+    .love-icon { font-size: 2rem; margin-bottom: 12px; }
+    .design-steps { counter-reset: design-counter; }
+    .design-step {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 16px;
+      border: 1px solid var(--beige-3);
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .design-step-num {
+      width: 42px; height: 42px;
+      background: var(--beige-3);
+      color: var(--text);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    @media (max-width: 640px) {
+      .loves-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav-inner">
+    <!-- Left links -->
+    <ul class="nav-links nav-links-left">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="stickerbooth.html" class="active">Sticker Booth</a></li>
+      <li><a href="greetingcardbooth.html">Greeting Card Booth</a></li>
+    </ul>
+
+    <!-- Center logo -->
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Momentpunt" />
+    </a>
+
+    <!-- Right links -->
+    <ul class="nav-links nav-links-right">
+      <li><a href="pakketten.html">Pakketten</a></li>
+      <li><a href="https://instagram.com/momentpunt.nl" class="nav-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a></li>
+      <li><a href="https://tiktok.com/@momentpunt.nl" class="nav-icon" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.52V6.76a4.84 4.84 0 01-1.02-.07z"/></svg></a></li>
+      <li><a href="contact.html" class="btn btn-primary btn-sm nav-cta">Book Now</a></li>
+    </ul>
+
+    <button class="hamburger" onclick="openMenu()" aria-label="Menu openen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="stickerbooth.html" onclick="closeMenu()">Sticker Booth</a>
+  <a href="greetingcardbooth.html" onclick="closeMenu()">Greeting Card Booth</a>
+  <a href="pakketten.html" onclick="closeMenu()">Pakketten</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<div class="nav-offset"></div>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="container text-center" style="position:relative;z-index:2;">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:rgba(26,24,18,.6);margin-bottom:16px;">Sticker Booth Huren</p>
+    <h1>Sticker automaat huren voor<br /><em>jouw bruiloft of feest</em></h1>
+    <p style="font-size:1.1rem;color:var(--text-mid);max-width:540px;margin:20px auto 0;line-height:1.75;">
+      Een retro muntenautomaat gevuld met custom geïllustreerde stickers — speciaal gemaakt voor jouw event. Interactief bruiloft entertainment dat iedereen raakt.
+    </p>
+
+    <!-- Sticker decoratives -->
+    <div class="sticker-showcase fade-up">
+      <div class="sticker-item">🌸</div>
+      <div class="sticker-item">💍</div>
+      <div class="sticker-item">🌿</div>
+      <div class="sticker-item">✨</div>
+      <div class="sticker-item">🦋</div>
+      <div class="sticker-item">🌻</div>
+      <div class="sticker-item">💑</div>
+    </div>
+    <p style="font-size:0.82rem;color:var(--text-soft);font-style:italic;margin-bottom:32px;">↑ Voorbeelden van custom sticker stijlen — volledig op maat voor jouw event</p>
+
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary">Sticker Booth aanvragen</a>
+      <a href="pakketten.html" class="btn btn-secondary">Bekijk pakketten</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── What is it ── -->
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="two-col">
+      <div class="fade-up">
+        <div class="section-label">Wat is een Sticker Booth?</div>
+        <h2>Een retro muntautomaat vol custom stickers</h2>
+        <p style="margin-top:20px;font-size:1rem;line-height:1.8;">
+          De <strong>Momentbox Sticker Booth</strong> is een klassieke retro muntenautomaat — maar dan met een twist. In plaats van snoep of speelgoed, komen er prachtig geïllustreerde stickers uit. Speciaal ontworpen voor jouw bruiloft of feest.
+        </p>
+        <p style="margin-top:14px;font-size:1rem;line-height:1.8;">
+          Gasten gooien een speciaal muntstuk in de automaat, draaien aan de hendel en wachten gespannen op hun sticker. Het klinkt eenvoudig — maar het gevoel is magisch.
+        </p>
+        <div class="info-box" style="margin-top:28px;">
+          <strong style="color:var(--beige-3);">💡 Wist je dat?</strong><br />
+          Sticker automaat verhuur voor bruiloften bestaat nog nauwelijks in Nederland. Jouw gasten hebben dit hoogstwaarschijnlijk nog nooit meegemaakt — gegarandeerd een gespreksstarter.
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:.1s;">
+        <div class="feature-visual">
+          <div class="big-emoji">🎰</div>
+          <div class="sticker-tag" style="position:absolute;top:24px;right:24px;">Sticker Booth</div>
+          <div style="display:flex;gap:10px;margin-top:8px;">
+            <span style="font-size:1.8rem;transform:rotate(-6deg);">🌸</span>
+            <span style="font-size:1.8rem;transform:rotate(3deg);">💍</span>
+            <span style="font-size:1.8rem;transform:rotate(-4deg);">🌿</span>
+          </div>
+          <div class="visual-caption">Custom sticker ontwerp per event</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Why guests love it ── -->
+<section class="section" style="background:var(--beige-2);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <div class="section-label fade-up">Waarom gasten het geweldig vinden</div>
+      <h2 class="fade-up">Interactief entertainment dat iedereen rakt</h2>
+      <p class="fade-up" style="max-width:500px;margin:14px auto 0;">Van de jongste kids tot de oudste gasten — de sticker automaat trekt iedereen aan.</p>
+    </div>
+    <div class="loves-grid">
+      <div class="love-card fade-up" style="transition-delay:0s;">
+        <div class="love-icon">🪄</div>
+        <h4>Het muntje gevoel</h4>
+        <p style="font-size:0.88rem;margin-top:8px;">Dat kleine moment van spanning als het muntje valt en de sticker eruit komt — puur magisch. Voor elke leeftijd.</p>
+      </div>
+      <div class="love-card fade-up" style="transition-delay:.08s;">
+        <div class="love-icon">🎨</div>
+        <h4>Uniek voor jouw dag</h4>
+        <p style="font-size:0.88rem;margin-top:8px;">Geen standaard stickers. Elk design is speciaal getekend voor jullie — jouw namen, jullie stijl, jullie dag.</p>
+      </div>
+      <div class="love-card fade-up" style="transition-delay:.16s;">
+        <div class="love-icon">📱</div>
+        <h4>Deelbaar op Instagram</h4>
+        <p style="font-size:0.88rem;margin-top:8px;">Gasten fotograferen de automaat, de sticker, het moment — en delen het. Gratis marketing voor de mooiste dag.</p>
+      </div>
+      <div class="love-card fade-up" style="transition-delay:.24s;">
+        <div class="love-icon">👶</div>
+        <h4>Leuk voor kinderen</h4>
+        <p style="font-size:0.88rem;margin-top:8px;">Kleine gasten zijn helemaal weg van de automaat. Rust voor de ouders, plezier voor de kids — win-win.</p>
+      </div>
+      <div class="love-card fade-up" style="transition-delay:.32s;">
+        <div class="love-icon">🤝</div>
+        <h4>Gespreksstarter</h4>
+        <p style="font-size:0.88rem;margin-top:8px;">De automaat trekt gasten samen. Wie kent elkaar nog niet? Bij de Sticker Booth worden vriendschappen gesloten.</p>
+      </div>
+      <div class="love-card fade-up" style="transition-delay:.4s;">
+        <div class="love-icon">💝</div>
+        <h4>Herinneringen</h4>
+        <p style="font-size:0.88rem;margin-top:8px;">Gasten nemen hun sticker mee naar huis. Maanden later vinden ze 'm op hun laptop of dagboek — en denken ze aan jullie dag.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Design process ── -->
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="two-col reverse">
+      <div class="fade-up">
+        <div class="section-label">Custom design</div>
+        <h2>Jouw stickers, jouw verhaal</h2>
+        <p style="margin-top:16px;font-size:1rem;line-height:1.8;">
+          Geen templates, geen clip art. Elke sticker wordt <strong>met de hand geïllustreerd</strong> voor jouw specifieke event. Wij werken nauw met jullie samen om het perfecte ontwerp te maken.
+        </p>
+        <div class="design-steps" style="margin-top:32px;">
+          <div class="design-step fade-up" style="transition-delay:0s;">
+            <div class="design-step-num">1</div>
+            <div>
+              <h4 style="font-family:'DM Sans',sans-serif;font-size:1rem;">Intake gesprek</h4>
+              <p style="font-size:0.9rem;margin-top:4px;">Jij vertelt over jullie stijl, kleuren en eventuele wensen. Bloemen? Jullie namen? Een specifiek thema? Alles is mogelijk.</p>
+            </div>
+          </div>
+          <div class="design-step fade-up" style="transition-delay:.1s;">
+            <div class="design-step-num">2</div>
+            <div>
+              <h4 style="font-family:'DM Sans',sans-serif;font-size:1rem;">Ontwerp voorstel</h4>
+              <p style="font-size:0.9rem;margin-top:4px;">Wij maken een eerste versie van de stickers en sturen je een preview. Volledig op maat, gemaakt met liefde.</p>
+            </div>
+          </div>
+          <div class="design-step fade-up" style="transition-delay:.2s;">
+            <div class="design-step-num">3</div>
+            <div>
+              <h4 style="font-family:'DM Sans',sans-serif;font-size:1rem;">Feedback &amp; aanpassen</h4>
+              <p style="font-size:0.9rem;margin-top:4px;">Kleine aanpassingen? Geen probleem. We zorgen dat het precies goed is voor jullie grote dag.</p>
+            </div>
+          </div>
+          <div class="design-step fade-up" style="transition-delay:.3s;">
+            <div class="design-step-num">4</div>
+            <div>
+              <h4 style="font-family:'DM Sans',sans-serif;font-size:1rem;">Drukken &amp; klaar!</h4>
+              <p style="font-size:0.9rem;margin-top:4px;">De stickers worden professioneel gedrukt en op de dag zelf staan ze netjes in de automaat — klaar voor jullie gasten.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:.15s;">
+        <div class="feature-visual" style="flex-direction:column;gap:20px;padding:40px;">
+          <div class="big-emoji">🎨</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;">
+            <div style="background:var(--beige-1);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
+              <div style="font-size:2rem;transform:rotate(-8deg);display:inline-block;">🌸</div>
+              <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Bloemen stijl</p>
+            </div>
+            <div style="background:var(--beige-1);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
+              <div style="font-size:2rem;transform:rotate(6deg);display:inline-block;">💑</div>
+              <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Portret stijl</p>
+            </div>
+            <div style="background:var(--beige-1);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
+              <div style="font-size:2rem;transform:rotate(-4deg);display:inline-block;">🌿</div>
+              <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Botanisch</p>
+            </div>
+            <div style="background:var(--beige-1);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
+              <div style="font-size:2rem;transform:rotate(5deg);display:inline-block;">✨</div>
+              <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Minimalistisch</p>
+            </div>
+          </div>
+          <div class="visual-caption">Voorbeelden van design stijlen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 30 Sticker Themes ── -->
+<section class="section" style="background:var(--beige-1);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:52px;">
+      <div class="section-label fade-up">Sticker thema's</div>
+      <h2 class="fade-up">30+ thema's om uit te kiezen</h2>
+      <p class="fade-up" style="max-width:520px;margin:14px auto 0;">Van klassieke kunst tot moderne minimalisme — jij kiest het thema, wij maken het werkelijkheid. Elk thema volledig aanpasbaar aan jouw kleuren en stijl.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;" class="fade-up">
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🎨</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Van Gogh</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">⚔️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Middeleeuws</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🖼️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Olieverf</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">👑</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Klassiek Portret</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🌹</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Barok</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🏛️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Renaissance</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🌺</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Art Nouveau</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">💎</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Art Deco</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🌿</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Botanisch</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">✏️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Lijn Kunst</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">💧</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Aquarel</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🗾</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Ukiyo-e Japans</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🎯</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Pop Art</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">📻</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Vintage Retro</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🪬</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Boho</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🌴</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Tropisch</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🌙</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Celestiaal</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🌻</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Garden Party</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🏡</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Rustiek</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🎬</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Vintage Hollywood</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🧚</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Sprookjesbos</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🥂</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Roaring 20s</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🏖️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Tropisch Strand</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">❄️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Scandinavisch</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🗼</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Romantisch Parijs</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">✨</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Zwart &amp; Goud</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🩷</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Pastel Dream</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🍂</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Aards &amp; Terra</p></div>
+      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🌊</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Modern Abstract</p></div>
+      <div style="background:var(--beige-3);border:1px solid var(--beige-4);border-radius:8px;padding:14px 12px;text-align:center;">
+        <div style="font-size:1.4rem;margin-bottom:6px;">🖌️</div><p style="font-size:0.78rem;font-weight:700;color:var(--text);">Eigen Thema</p></div>
+    </div>
+    <p class="text-center fade-up" style="margin-top:24px;font-size:0.85rem;color:var(--text-soft);font-style:italic;">Elk thema volledig aanpasbaar op kleur, stijl en persoonlijke details</p>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="cta-banner fade-up">
+      <span style="font-size:2rem;display:block;margin-bottom:12px;">🎰</span>
+      <h2>Sticker Booth voor jouw event?</h2>
+      <p>Bekijk het volledige pakket of stuur direct een aanvraag. Wij zijn er voor bruiloften, verjaardagen en alle feesten die het waard zijn om te onthouden.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
+        <a href="contact.html" class="btn btn-secondary">Aanvraag sturen</a>
+        <a href="pakketten.html" class="btn btn-secondary">Alle pakketten bekijken</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html"><img src="images/logo.png" alt="Momentpunt" class="footer-logo-img" /></a>
+      <p>Een muntje. Een moment. Voor altijd.<br />Custom sticker &amp; kaartjesautomaten voor de mooiste momenten.</p>
+      <p style="margin-top:12px; color:var(--text-mid);">📍 Noord-Brabant, Nederland</p>
+      <p style="margin-top:4px;"><a href="mailto:info@momentpunt.nl" style="color:var(--text);">info@momentpunt.nl</a></p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/momentpunt.nl" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+        <a href="https://tiktok.com/@momentpunt.nl" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.52V6.76a4.84 4.84 0 01-1.02-.07z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Pagina's</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stickerbooth.html">Sticker Booth</a></li>
+        <li><a href="greetingcardbooth.html">Greeting Card Booth</a></li>
+        <li><a href="pakketten.html">Pakketten &amp; Prijzen</a></li>
+        <li><a href="contact.html">Contact &amp; Boeken</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Events</h4>
+      <ul>
+        <li><a href="stickerbooth.html">Bruiloft entertainment</a></li>
+        <li><a href="greetingcardbooth.html">Gastenboek alternatief</a></li>
+        <li><a href="pakketten.html">Bruiloft pakketten</a></li>
+        <li><a href="contact.html">Offerte aanvragen</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Momentpunt · Noord-Brabant</span>
+    <span>✦ sticker booth huren bruiloft</span>
+  </div>
+</footer>
+
+<script>
+  function openMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
