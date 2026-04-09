@@ -29,32 +29,19 @@
     .sticker-item:nth-child(odd) { transform: rotate(-5deg); }
     .sticker-item:nth-child(even) { transform: rotate(4deg); }
     .sticker-item:hover { transform: rotate(0deg) scale(1.12); }
-    .loves-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .love-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 28px 24px;
-      text-align: center;
-      border: 1px solid var(--beige-3);
-    }
-    .love-icon { font-size: 2rem; margin-bottom: 12px; }
     .design-steps { counter-reset: design-counter; }
     .design-step {
       background: var(--white);
       border-radius: var(--radius-md);
-      padding: 28px 32px;
-      margin-bottom: 16px;
+      padding: 24px 28px;
+      margin-bottom: 12px;
       border: 1px solid var(--beige-3);
       display: flex;
-      gap: 24px;
+      gap: 20px;
       align-items: flex-start;
     }
     .design-step-num {
-      width: 42px; height: 42px;
+      width: 38px; height: 38px;
       background: var(--beige-3);
       color: var(--text);
       border-radius: 50%;
@@ -63,11 +50,11 @@
       justify-content: center;
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1rem;
       flex-shrink: 0;
     }
     @media (max-width: 640px) {
-      .loves-grid { grid-template-columns: 1fr 1fr; }
+      .sticker-item { width: 72px; height: 72px; font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -90,20 +77,20 @@
       <li><a href="https://tiktok.com/@momentpunt.nl" class="nav-icon" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.52V6.76a4.84 4.84 0 01-1.02-.07z"/></svg></a></li>
       <li><a href="contact.html" class="btn btn-primary btn-sm nav-cta">Book Now</a></li>
     </ul>
-    <button class="hamburger" onclick="openMenu()" aria-label="Menu">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
-  <a href="index.html" onclick="closeMenu()">Home</a>
-  <a href="stickerbooth.html" onclick="closeMenu()">Sticker Booth</a>
-  <a href="greetingcardbooth.html" onclick="closeMenu()">Card Booth</a>
-  <a href="mixbooth.html" onclick="closeMenu()">Mix Booth</a>
-  <a href="pakketten.html" onclick="closeMenu()">Pakketten</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="stickerbooth.html" class="active">Sticker Booth</a>
+  <a href="greetingcardbooth.html">Card Booth</a>
+  <a href="mixbooth.html">Mix Booth</a>
+  <a href="pakketten.html">Pakketten</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mobile-menu-cta">Book Now →</a>
 </div>
 
 <div class="nav-offset"></div>
@@ -114,21 +101,12 @@
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:rgba(26,24,18,.6);margin-bottom:16px;">Sticker Booth Huren</p>
     <h1>Sticker automaat huren voor<br /><em>jouw bruiloft of feest</em></h1>
     <p style="font-size:1.1rem;color:var(--text-mid);max-width:540px;margin:20px auto 0;line-height:1.75;">
-      Een retro muntenautomaat gevuld met custom geïllustreerde stickers — speciaal gemaakt voor jouw event. Interactief bruiloft entertainment dat iedereen raakt.
+      Een retro muntenautomaat gevuld met custom geïllustreerde stickers — speciaal gemaakt voor jouw event. Interactief entertainment dat iedereen raakt.
     </p>
-
-    <!-- Sticker decoratives -->
-    <div class="sticker-showcase fade-up">
-      <div class="sticker-item">🌸</div>
-      <div class="sticker-item">💍</div>
-      <div class="sticker-item">🌿</div>
-      <div class="sticker-item">✨</div>
-      <div class="sticker-item">🦋</div>
-      <div class="sticker-item">🌻</div>
-      <div class="sticker-item">💑</div>
+    <div class="fade-up" style="margin:32px auto 28px; max-width:860px;">
+      <img src="images/sticker-examples.png" alt="Voorbeelden van custom sticker stijlen — bruiloft, verjaardag, anime, renaissance" style="width:100%; height:auto; display:block;" />
     </div>
-    <p style="font-size:0.82rem;color:var(--text-soft);font-style:italic;margin-bottom:32px;">↑ Voorbeelden van custom sticker stijlen — volledig op maat voor jouw event</p>
-
+    <p style="font-size:0.82rem;color:var(--text-soft);font-style:italic;margin-bottom:32px;">Stuur ons een foto — wij tekenen jouw gasten in elk thema</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
       <a href="contact.html" class="btn btn-primary">Sticker Booth aanvragen</a>
       <a href="pakketten.html" class="btn btn-secondary">Bekijk pakketten</a>
@@ -136,7 +114,7 @@
   </div>
 </section>
 
-<!-- ── What is it ── -->
+<!-- ── Wat is het? ── -->
 <section class="section" style="background:var(--white);">
   <div class="container">
     <div class="two-col">
@@ -147,10 +125,10 @@
           De <strong>Momentbox Sticker Booth</strong> is een klassieke retro muntenautomaat — maar dan met een twist. In plaats van snoep of speelgoed, komen er prachtig geïllustreerde stickers uit. Speciaal ontworpen voor jouw bruiloft of feest.
         </p>
         <p style="margin-top:14px;font-size:1rem;line-height:1.8;">
-          Gasten gooien een speciaal muntstuk in de automaat, draaien aan de hendel en wachten gespannen op hun sticker. Het klinkt eenvoudig — maar het gevoel is magisch.
+          Gasten pakken een token uit de schaal, gooien 'm in de automaat en draaien aan de hendel. Het klinkt eenvoudig — maar het gevoel is magisch.
         </p>
         <div class="info-box" style="margin-top:28px;">
-          <strong style="color:var(--beige-3);">💡 Wist je dat?</strong><br />
+          <strong style="color:var(--terra);">💡 Wist je dat?</strong><br />
           Sticker automaat verhuur voor bruiloften bestaat nog nauwelijks in Nederland. Jouw gasten hebben dit hoogstwaarschijnlijk nog nooit meegemaakt — gegarandeerd een gespreksstarter.
         </div>
       </div>
@@ -170,51 +148,143 @@
   </div>
 </section>
 
-<!-- ── Why guests love it ── -->
-<section class="section" style="background:var(--beige-2);">
+<!-- ── Zo werkt het ── -->
+<section class="section" style="background:var(--beige-1);">
   <div class="container">
-    <div class="text-center" style="margin-bottom:48px;">
-      <div class="section-label fade-up">Waarom gasten het geweldig vinden</div>
-      <h2 class="fade-up">Interactief entertainment dat iedereen rakt</h2>
-      <p class="fade-up" style="max-width:500px;margin:14px auto 0;">Van de jongste kids tot de oudste gasten — de sticker automaat trekt iedereen aan.</p>
+    <div class="text-center">
+      <span class="section-label">Zo werkt het</span>
+      <h2 style="max-width:560px;margin:0 auto;">Van token tot sticker</h2>
     </div>
-    <div class="loves-grid">
-      <div class="love-card fade-up" style="transition-delay:0s;">
-        <div class="love-icon">🪄</div>
-        <h4>Het muntje gevoel</h4>
-        <p style="font-size:0.88rem;margin-top:8px;">Dat kleine moment van spanning als het muntje valt en de sticker eruit komt — puur magisch. Voor elke leeftijd.</p>
+    <div class="hiw-grid">
+      <div class="hiw-step fade-up">
+        <span class="hiw-badge">01</span>
+        <span class="hiw-icon">🎟️</span>
+        <h4>Tokens in de schaal</h4>
+        <p>120 tokens liggen klaar in een sfeervolle schaal bij de automaat. Gasten pakken er vrij één — geen uitdelen, geen gedoe.</p>
       </div>
-      <div class="love-card fade-up" style="transition-delay:.08s;">
-        <div class="love-icon">🎨</div>
-        <h4>Uniek voor jouw dag</h4>
-        <p style="font-size:0.88rem;margin-top:8px;">Geen standaard stickers. Elk design is speciaal getekend voor jullie — jouw namen, jullie stijl, jullie dag.</p>
+      <div class="hiw-step fade-up" style="transition-delay:.08s;">
+        <span class="hiw-badge">02</span>
+        <span class="hiw-icon">🎰</span>
+        <h4>Token in de automaat</h4>
+        <p>De gast gooit het token in de automaat en draait aan de hendel. Een moment vol spanning — wat komt eruit?</p>
       </div>
-      <div class="love-card fade-up" style="transition-delay:.16s;">
-        <div class="love-icon">📱</div>
-        <h4>Deelbaar op Instagram</h4>
-        <p style="font-size:0.88rem;margin-top:8px;">Gasten fotograferen de automaat, de sticker, het moment — en delen het. Gratis marketing voor de mooiste dag.</p>
+      <div class="hiw-step fade-up" style="transition-delay:.16s;">
+        <span class="hiw-badge">03</span>
+        <span class="hiw-icon">🏷️</span>
+        <h4>Custom sticker eruit!</h4>
+        <p>Een prachtig geïllustreerde sticker verschijnt — speciaal getekend voor jouw event. Elk detail klopt, elke sticker uniek.</p>
       </div>
-      <div class="love-card fade-up" style="transition-delay:.24s;">
-        <div class="love-icon">👶</div>
-        <h4>Leuk voor kinderen</h4>
-        <p style="font-size:0.88rem;margin-top:8px;">Kleine gasten zijn helemaal weg van de automaat. Rust voor de ouders, plezier voor de kids — win-win.</p>
-      </div>
-      <div class="love-card fade-up" style="transition-delay:.32s;">
-        <div class="love-icon">🤝</div>
-        <h4>Gespreksstarter</h4>
-        <p style="font-size:0.88rem;margin-top:8px;">De automaat trekt gasten samen. Wie kent elkaar nog niet? Bij de Sticker Booth worden vriendschappen gesloten.</p>
-      </div>
-      <div class="love-card fade-up" style="transition-delay:.4s;">
-        <div class="love-icon">💝</div>
-        <h4>Herinneringen</h4>
-        <p style="font-size:0.88rem;margin-top:8px;">Gasten nemen hun sticker mee naar huis. Maanden later vinden ze 'm op hun laptop of dagboek — en denken ze aan jullie dag.</p>
+      <div class="hiw-step fade-up" style="transition-delay:.24s;">
+        <span class="hiw-badge">04</span>
+        <span class="hiw-icon">💛</span>
+        <h4>Bewaren voor altijd</h4>
+        <p>Op de laptop, koelkast of dagboek — maanden later vinden gasten hun sticker terug en denken ze aan jouw dag.</p>
       </div>
     </div>
+    <p style="margin-top:32px;text-align:center;font-size:0.82rem;color:var(--text-soft);">Standaard 120 tokens per event &nbsp;·&nbsp; Extra tokens bijbestellen: 20 stuks voor €10</p>
   </div>
 </section>
 
-<!-- ── Design process ── -->
+<!-- ── 20 Thema's ── -->
 <section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:52px;">
+      <div class="section-label fade-up">Sticker thema's</div>
+      <h2 class="fade-up">20 thema's om uit te kiezen</h2>
+      <p class="fade-up" style="max-width:520px;margin:14px auto 0;">Van klassieke meesters tot moderne stijlen — jij kiest het thema, wij maken het werkelijkheid. Elk thema volledig aanpasbaar aan jouw kleuren en stijl.</p>
+    </div>
+    <div class="themes-grid fade-up" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🎨</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Van Gogh</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Post-impressionisme</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🖼️</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Rembrandt</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Klassiek portret</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🏛️</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Renaissance</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Italiaanse meesterwerken</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🌹</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Barok</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Weelderig & dramatisch</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">💎</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Art Deco</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Goud & geometrie</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🌺</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Art Nouveau</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Organische lijnen</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🎯</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Pop Art</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Bold & kleurrijk</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">💧</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Aquarel</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Zacht & dromerig</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🌿</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Botanisch</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Bladeren & bloemen</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🗾</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Ukiyo-e Japans</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Traditionele houtsnede</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">📻</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Vintage Retro</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Jaren '50 en '60</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🪬</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Boho</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Vrij & eclectisch</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">✨</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Glitter & Glamour</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Feestelijk & sprankelend</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🌴</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Tropisch</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Zomers & levendig</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🗼</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Romantisch Parijs</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Liefde & elegantie</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🩷</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Pastel Dream</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Zacht & romantisch</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">✏️</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Minimalistisch</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Strak & modern</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🌑</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Zwart & Goud</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Luxe & statig</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">⚽</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Voetbal</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Voor de fans</p>
+      </div>
+      <div style="background:var(--beige-1);border:1px solid var(--beige-3);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🦕</div><p style="font-size:0.82rem;font-weight:600;color:var(--text);">Dinosaurus</p>
+        <p style="font-size:0.72rem;color:var(--text-soft);margin-top:2px;">Kids (en volwassenen) gek</p>
+      </div>
+      <div style="background:var(--beige-3);border:2px solid var(--beige-4);border-radius:8px;padding:16px 12px;text-align:center;">
+        <div style="font-size:1.5rem;margin-bottom:6px;">🖌️</div><p style="font-size:0.82rem;font-weight:700;color:var(--text);">Eigen Thema</p>
+        <p style="font-size:0.72rem;color:var(--text-mid);margin-top:2px;">Jouw idee, wij maken het</p>
+      </div>
+    </div>
+    <p class="text-center fade-up" style="margin-top:24px;font-size:0.85rem;color:var(--text-soft);font-style:italic;">Elk thema volledig aanpasbaar op kleur, stijl en persoonlijke details</p>
+  </div>
+</section>
+
+<!-- ── Custom design ── -->
+<section class="section" style="background:var(--beige-2);">
   <div class="container">
     <div class="two-col reverse">
       <div class="fade-up">
@@ -223,159 +293,124 @@
         <p style="margin-top:16px;font-size:1rem;line-height:1.8;">
           Geen templates, geen clip art. Elke sticker wordt <strong>met de hand geïllustreerd</strong> voor jouw specifieke event. Wij werken nauw met jullie samen om het perfecte ontwerp te maken.
         </p>
-        <div class="design-steps" style="margin-top:32px;">
+        <div class="design-steps" style="margin-top:28px;">
           <div class="design-step fade-up" style="transition-delay:0s;">
             <div class="design-step-num">1</div>
             <div>
-              <h4 style="font-family:'DM Sans',sans-serif;font-size:1rem;">Intake gesprek</h4>
-              <p style="font-size:0.9rem;margin-top:4px;">Jij vertelt over jullie stijl, kleuren en eventuele wensen. Bloemen? Jullie namen? Een specifiek thema? Alles is mogelijk.</p>
+              <h4 style="font-family:'DM Sans',sans-serif;font-size:0.95rem;">Intake &amp; wensen</h4>
+              <p style="font-size:0.88rem;margin-top:4px;">Jij vertelt over jullie stijl, kleuren en wensen. Alles is mogelijk.</p>
             </div>
           </div>
-          <div class="design-step fade-up" style="transition-delay:.1s;">
+          <div class="design-step fade-up" style="transition-delay:.08s;">
             <div class="design-step-num">2</div>
             <div>
-              <h4 style="font-family:'DM Sans',sans-serif;font-size:1rem;">Ontwerp voorstel</h4>
-              <p style="font-size:0.9rem;margin-top:4px;">Wij maken een eerste versie van de stickers en sturen je een preview. Volledig op maat, gemaakt met liefde.</p>
+              <h4 style="font-family:'DM Sans',sans-serif;font-size:0.95rem;">Ontwerp voorstel</h4>
+              <p style="font-size:0.88rem;margin-top:4px;">Wij maken een eerste versie en sturen je een preview.</p>
             </div>
           </div>
-          <div class="design-step fade-up" style="transition-delay:.2s;">
+          <div class="design-step fade-up" style="transition-delay:.16s;">
             <div class="design-step-num">3</div>
             <div>
-              <h4 style="font-family:'DM Sans',sans-serif;font-size:1rem;">Feedback &amp; aanpassen</h4>
-              <p style="font-size:0.9rem;margin-top:4px;">Kleine aanpassingen? Geen probleem. We zorgen dat het precies goed is voor jullie grote dag.</p>
+              <h4 style="font-family:'DM Sans',sans-serif;font-size:0.95rem;">Feedback &amp; aanpassen</h4>
+              <p style="font-size:0.88rem;margin-top:4px;">Kleine aanpassingen? Geen probleem. We zorgen dat het klopt.</p>
             </div>
           </div>
-          <div class="design-step fade-up" style="transition-delay:.3s;">
+          <div class="design-step fade-up" style="transition-delay:.24s;">
             <div class="design-step-num">4</div>
             <div>
-              <h4 style="font-family:'DM Sans',sans-serif;font-size:1rem;">Drukken &amp; klaar!</h4>
-              <p style="font-size:0.9rem;margin-top:4px;">De stickers worden professioneel gedrukt en op de dag zelf staan ze netjes in de automaat — klaar voor jullie gasten.</p>
+              <h4 style="font-family:'DM Sans',sans-serif;font-size:0.95rem;">Drukken &amp; bezorgen</h4>
+              <p style="font-size:0.88rem;margin-top:4px;">Professioneel gedrukt en op de dag zelf in de automaat.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="fade-up" style="transition-delay:.15s;">
+      <div class="fade-up" style="transition-delay:.1s;">
         <div class="feature-visual" style="flex-direction:column;gap:20px;padding:40px;">
           <div class="big-emoji">🎨</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;">
-            <div style="background:var(--beige-1);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
+            <div style="background:var(--white);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
               <div style="font-size:2rem;transform:rotate(-8deg);display:inline-block;">🌸</div>
-              <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Bloemen stijl</p>
-            </div>
-            <div style="background:var(--beige-1);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
-              <div style="font-size:2rem;transform:rotate(6deg);display:inline-block;">💑</div>
-              <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Portret stijl</p>
-            </div>
-            <div style="background:var(--beige-1);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
-              <div style="font-size:2rem;transform:rotate(-4deg);display:inline-block;">🌿</div>
               <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Botanisch</p>
             </div>
-            <div style="background:var(--beige-1);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
-              <div style="font-size:2rem;transform:rotate(5deg);display:inline-block;">✨</div>
-              <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Minimalistisch</p>
+            <div style="background:var(--white);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
+              <div style="font-size:2rem;transform:rotate(6deg);display:inline-block;">💎</div>
+              <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Art Deco</p>
+            </div>
+            <div style="background:var(--white);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
+              <div style="font-size:2rem;transform:rotate(-4deg);display:inline-block;">✨</div>
+              <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Glitter</p>
+            </div>
+            <div style="background:var(--white);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--beige-3);">
+              <div style="font-size:2rem;transform:rotate(5deg);display:inline-block;">🎨</div>
+              <p style="font-size:0.75rem;color:var(--text-soft);margin-top:6px;">Van Gogh</p>
             </div>
           </div>
-          <div class="visual-caption">Voorbeelden van design stijlen</div>
+          <div class="visual-caption">Voorbeelden van stijlen</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── 30 Sticker Themes ── -->
+<!-- ── Prijs ── -->
 <section class="section" style="background:var(--beige-1);">
   <div class="container">
     <div class="text-center" style="margin-bottom:52px;">
-      <div class="section-label fade-up">Sticker thema's</div>
-      <h2 class="fade-up">30+ thema's om uit te kiezen</h2>
-      <p class="fade-up" style="max-width:520px;margin:14px auto 0;">Van klassieke kunst tot moderne minimalisme — jij kiest het thema, wij maken het werkelijkheid. Elk thema volledig aanpasbaar aan jouw kleuren en stijl.</p>
+      <div class="section-label fade-up">Prijs</div>
+      <h2 class="fade-up">Sticker Booth — €375 all-in</h2>
+      <p class="fade-up" style="max-width:480px;margin:14px auto 0;">Alles inbegrepen. Geen verborgen kosten. Jij geniet, wij regelen de rest.</p>
     </div>
-    <div class="themes-grid fade-up" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;">
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🎨</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Van Gogh</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">⚔️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Middeleeuws</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🖼️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Olieverf</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">👑</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Klassiek Portret</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🌹</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Barok</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🏛️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Renaissance</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🌺</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Art Nouveau</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">💎</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Art Deco</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🌿</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Botanisch</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">✏️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Lijn Kunst</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">💧</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Aquarel</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🗾</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Ukiyo-e Japans</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🎯</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Pop Art</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">📻</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Vintage Retro</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🪬</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Boho</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🌴</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Tropisch</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🌙</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Celestiaal</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🌻</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Garden Party</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🏡</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Rustiek</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🎬</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Vintage Hollywood</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🧚</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Sprookjesbos</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🥂</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Roaring 20s</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🏖️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Tropisch Strand</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">❄️</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Scandinavisch</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🗼</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Romantisch Parijs</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">✨</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Zwart &amp; Goud</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🩷</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Pastel Dream</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🍂</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Aards &amp; Terra</p></div>
-      <div style="background:var(--white);border:1px solid var(--beige-3);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🌊</div><p style="font-size:0.78rem;font-weight:600;color:var(--text);">Modern Abstract</p></div>
-      <div style="background:var(--beige-3);border:1px solid var(--beige-4);border-radius:8px;padding:14px 12px;text-align:center;">
-        <div style="font-size:1.4rem;margin-bottom:6px;">🖌️</div><p style="font-size:0.78rem;font-weight:700;color:var(--text);">Eigen Thema</p></div>
+    <div style="max-width:600px;margin:0 auto;" class="fade-up">
+      <div style="background:var(--white);border:2px solid var(--beige-3);border-radius:var(--radius-md);overflow:hidden;">
+        <div style="padding:36px;">
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px;">
+            <span style="font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:700;color:var(--text);">€375</span>
+            <span style="color:var(--text-soft);font-size:0.9rem;">eenmalig all-in</span>
+          </div>
+          <p style="font-size:0.78rem;color:var(--text-soft);margin:0 0 4px;">met bezorging &amp; opbouw <span style="color:var(--terra);font-weight:600;">— of €300 bij afhalen in Hapert</span></p>
+          <ul class="feature-list" style="margin-top:24px;">
+            <li>Custom geïllustreerde stickers (eigen design)</li>
+            <li>Kies uit 20 thema's — volledig aanpasbaar</li>
+            <li>Retro muntautomaat op jouw locatie</li>
+            <li>Custom front panel insert</li>
+            <li>120 tokens per event (schaal inbegrepen)</li>
+            <li>Bezorging, opbouw &amp; afbouw</li>
+            <li>1 custom illustratie design inbegrepen</li>
+            <li>Persoonlijk contact &amp; design afstemming</li>
+          </ul>
+          <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary" style="flex:1;justify-content:center;">Sticker Booth boeken</a>
+            <a href="pakketten.html" class="btn btn-secondary" style="flex:1;justify-content:center;">Alle pakketten</a>
+          </div>
+        </div>
+      </div>
+      <div class="info-box fade-up" style="margin-top:16px;">
+        <strong>💡 Extra tokens bijbestellen?</strong> 20 tokens voor €10 — bestel er gerust bij voor grotere gezelschappen.
+      </div>
     </div>
-    <p class="text-center fade-up" style="margin-top:24px;font-size:0.85rem;color:var(--text-soft);font-style:italic;">Elk thema volledig aanpasbaar op kleur, stijl en persoonlijke details</p>
   </div>
 </section>
 
 <!-- ── CTA ── -->
-<section class="section" style="background:var(--white);">
+<section class="cta-photo" style="background-image: url('images/machine-garden.jpg');">
   <div class="container">
-    <div class="cta-banner fade-up">
-      <span style="font-size:2rem;display:block;margin-bottom:12px;">🎰</span>
-      <h2>Sticker Booth voor jouw event?</h2>
-      <p>Bekijk het volledige pakket of stuur direct een aanvraag. Wij zijn er voor bruiloften, verjaardagen en alle feesten die het waard zijn om te onthouden.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
-        <a href="contact.html" class="btn btn-secondary">Aanvraag sturen</a>
-        <a href="pakketten.html" class="btn btn-secondary">Alle pakketten bekijken</a>
+    <div class="cta-photo-inner fade-up">
+      <span class="section-label">Sticker Booth voor jouw event?</span>
+      <h2>Geef jouw gasten een sticker<br />die ze nooit vergeten</h2>
+      <p>Bruiloften, verjaardagen en alle feesten die het waard zijn om te onthouden. Stuur een aanvraag — we reageren binnen één werkdag.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary">Aanvraag sturen</a>
+        <a href="pakketten.html" class="btn btn-ghost">Alle pakketten</a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-inner">
+  <div class="footer-inner container">
     <div class="footer-brand">
       <a href="index.html"><img src="images/logo.png" alt="Momentpunt" class="footer-logo-img" /></a>
-      <p>Een muntje. Een moment. Voor altijd.<br />Custom automaten voor bruiloften, feesten &amp; verjaardagen.</p>
+      <p>Een token. Een moment. Voor altijd.<br />Custom automaten voor bruiloften, feesten &amp; verjaardagen.</p>
       <p style="margin-top:12px; color:var(--text-mid);">📍 Noord-Brabant, Nederland</p>
       <p style="margin-top:4px;"><a href="mailto:info@momentpunt.nl" style="color:var(--text);">info@momentpunt.nl</a></p>
       <div class="footer-socials">
@@ -406,17 +441,31 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Momentpunt · Noord-Brabant</span>
-    <span>✦ sticker booth huren</span>
+    <div class="footer-bottom-inner">
+      <span>© 2025 Momentpunt · Noord-Brabant</span>
+      <span>✦ sticker automaat huren</span>
+    </div>
   </div>
 </footer>
 
 <script>
-  function openMenu() { document.getElementById('mobileMenu').classList.add('open'); }
-  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const nav = document.getElementById('mainNav');
+    if (menu.classList.contains('open') && !nav.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+      document.querySelector('.hamburger').classList.remove('open');
+    }
+  });
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>

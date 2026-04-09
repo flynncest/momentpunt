@@ -39,56 +39,28 @@
     .comparison-col ul li:last-child { border: none; }
     .old-icon { color: var(--text-soft); font-size: 0.85rem; }
     .new-icon { color: var(--terra); }
-    .reasons-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    .reason-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 28px;
-      border: 1px solid var(--beige-3);
-      transition: all var(--transition);
-    }
-    .reason-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-    .reason-icon { font-size: 2rem; margin-bottom: 12px; }
     .card-preview {
       background: var(--white);
       border-radius: var(--radius-md);
       border: 1px solid var(--beige-3);
-      padding: 32px;
+      padding: 28px;
       box-shadow: var(--shadow-md);
       transform: rotate(-2deg);
-      max-width: 320px;
+      max-width: 280px;
       margin: 0 auto;
     }
     .card-preview-front {
       background: var(--beige-2);
       border-radius: var(--radius-sm);
-      padding: 24px;
+      padding: 20px;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       border: 1px dashed var(--beige-4);
     }
-    .card-preview-back {
-      border-top: 1px dashed var(--beige-3);
-      padding-top: 16px;
-    }
-    .write-lines {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .write-line {
-      height: 1px;
-      background: var(--beige-3);
-      border-radius: 1px;
-    }
+    .write-lines { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+    .write-line { height: 1px; background: var(--beige-3); border-radius: 1px; }
     @media (max-width: 640px) {
       .card-comparison { grid-template-columns: 1fr; }
-      .reasons-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -111,20 +83,20 @@
       <li><a href="https://tiktok.com/@momentpunt.nl" class="nav-icon" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.52V6.76a4.84 4.84 0 01-1.02-.07z"/></svg></a></li>
       <li><a href="contact.html" class="btn btn-primary btn-sm nav-cta">Book Now</a></li>
     </ul>
-    <button class="hamburger" onclick="openMenu()" aria-label="Menu">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
-  <a href="index.html" onclick="closeMenu()">Home</a>
-  <a href="stickerbooth.html" onclick="closeMenu()">Sticker Booth</a>
-  <a href="greetingcardbooth.html" onclick="closeMenu()">Card Booth</a>
-  <a href="mixbooth.html" onclick="closeMenu()">Mix Booth</a>
-  <a href="pakketten.html" onclick="closeMenu()">Pakketten</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="stickerbooth.html">Sticker Booth</a>
+  <a href="greetingcardbooth.html" class="active">Card Booth</a>
+  <a href="mixbooth.html">Mix Booth</a>
+  <a href="pakketten.html">Pakketten</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mobile-menu-cta">Book Now →</a>
 </div>
 
 <div class="nav-offset"></div>
@@ -135,17 +107,16 @@
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:rgba(26,24,18,.6);margin-bottom:16px;">Greeting Card Booth Huren</p>
     <h1>Het mooiste gastenboek dat<br /><em>je ooit hebt gezien</em></h1>
     <p style="font-size:1.1rem;color:var(--text-mid);max-width:560px;margin:20px auto 0;line-height:1.75;">
-      Gasten venden een prachtig custom geïllustreerde kaart, schrijven een persoonlijke wens op de achterkant — en jullie houden een uniek bruiloft gastenboek over dat elk jaar mooier wordt.
+      Gasten venden een prachtig custom geïllustreerde kaart, schrijven een persoonlijke wens op de achterkant — en jullie houden een uniek handgeschreven gastenboek over.
     </p>
-
-    <div style="margin:36px auto 8px;max-width:320px;">
+    <div style="margin:36px auto 8px;max-width:280px;">
       <div class="card-preview fade-up">
         <div class="card-preview-front">
-          <div style="font-size:2.8rem;margin-bottom:8px;">💌</div>
-          <p style="font-size:0.8rem;font-style:italic;color:var(--text-soft);">Custom illustratie<br />speciaal voor jullie dag</p>
+          <div style="font-size:2.4rem;margin-bottom:8px;">💌</div>
+          <p style="font-size:0.78rem;font-style:italic;color:var(--text-soft);">Custom illustratie<br />speciaal voor jullie dag</p>
         </div>
-        <div class="card-preview-back">
-          <p style="font-size:0.75rem;color:var(--text-soft);font-style:italic;margin-bottom:8px;">Schrijf hier jouw wens...</p>
+        <div style="border-top:1px dashed var(--beige-3);padding-top:14px;">
+          <p style="font-size:0.72rem;color:var(--text-soft);font-style:italic;margin-bottom:8px;">Schrijf hier jouw wens...</p>
           <div class="write-lines">
             <div class="write-line"></div>
             <div class="write-line"></div>
@@ -154,7 +125,6 @@
         </div>
       </div>
     </div>
-
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;">
       <a href="contact.html" class="btn btn-primary">Card Booth aanvragen</a>
       <a href="pakketten.html" class="btn btn-secondary">Bekijk pakketten</a>
@@ -162,92 +132,36 @@
   </div>
 </section>
 
-<!-- ── What makes it unique ── -->
+<!-- ── Wat is het? ── -->
 <section class="section" style="background:var(--white);">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:48px;">
-      <div class="section-label fade-up">Wat maakt het uniek</div>
-      <h2 class="fade-up">Een kaartje venden. Een wens schrijven.<br />Een gastenboek dat bijblijft.</h2>
-      <p class="fade-up" style="max-width:560px;margin:16px auto 0;font-size:1rem;line-height:1.75;">
-        Traditionele gastenboeken worden één keer ingekeken en daarna weggestopt. De Momentbox Card Booth maakt van wensen schrijven een écht feestelijk moment — voor elke gast.
-      </p>
-    </div>
-
-    <div class="card-comparison fade-up">
-      <div class="comparison-col old">
-        <h4 style="color:var(--text-soft);">😕 Traditioneel gastenboek</h4>
-        <ul>
-          <li><span class="old-icon">—</span> Eén groot boek, gasten schrijven op een bladzijde</li>
-          <li><span class="old-icon">—</span> Weinig structuur, gasten weten niet wat ze moeten schrijven</li>
-          <li><span class="old-icon">—</span> Verdwijnt in een lade na de bruiloft</li>
-          <li><span class="old-icon">—</span> Geen interactief moment voor gasten</li>
-          <li><span class="old-icon">—</span> Generiek — ziet er hetzelfde uit voor iedereen</li>
-        </ul>
-      </div>
-      <div class="comparison-col new">
-        <h4 style="color:var(--beige-3);">✦ Momentbox Card Booth</h4>
-        <ul>
-          <li><span class="new-icon">✦</span> Elke gast heeft zijn eigen, unieke kaart</li>
-          <li><span class="new-icon">✦</span> Het venden van de kaart maakt het een feestelijk ritueel</li>
-          <li><span class="new-icon">✦</span> Custom illustratie op elke kaart — speciaal voor jullie</li>
-          <li><span class="new-icon">✦</span> Jullie houden een handgemaakt "gastenboek" over</li>
-          <li><span class="new-icon">✦</span> 100% Instagram-worthy moment voor gasten</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── How it works ── -->
-<section class="section" style="background:var(--beige-2);">
   <div class="container">
     <div class="two-col">
       <div class="fade-up">
-        <div class="section-label">Hoe het werkt</div>
-        <h2>Van automaat tot voor altijd</h2>
-        <div style="margin-top:32px;">
-          <div class="process-step">
-            <div class="process-num">1</div>
-            <div>
-              <h4 style="font-family:'DM Sans',sans-serif;">Gast krijgt een speciaal muntje</h4>
-              <p style="font-size:0.9rem;margin-top:6px;">Elk gast ontvangt bij binnenkomst (of van jullie persoonlijk) een Momentbox speelmuntje. Dat kleine muntje draagt een groot gevoel.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-num">2</div>
-            <div>
-              <h4 style="font-family:'DM Sans',sans-serif;">Muntje gaat de automaat in</h4>
-              <p style="font-size:0.9rem;margin-top:6px;">De gast loopt naar de automaat, gooit het muntje erin en draait de hendel. Een klein moment vol verwachting.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-num">3</div>
-            <div>
-              <h4 style="font-family:'DM Sans',sans-serif;">Een prachtige kaart komt eruit</h4>
-              <p style="font-size:0.9rem;margin-top:6px;">De automaat geeft een custom geïllustreerde greeting card uit — speciaal getekend voor jullie bruiloft. De voorkant is prachtig; de achterkant wacht op een wens.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-num">4</div>
-            <div>
-              <h4 style="font-family:'DM Sans',sans-serif;">Wens schrijven &amp; inleveren</h4>
-              <p style="font-size:0.9rem;margin-top:6px;">De gast schrijft een persoonlijke wens op de achterkant en geeft de kaart aan jullie — of legt 'm in een mooie doos. Na het feest hebben jullie een uniek handgeschreven gastenboek.</p>
-            </div>
-          </div>
+        <div class="section-label">Wat is een Card Booth?</div>
+        <h2>Een retro automaat vol gepersonaliseerde kaarten</h2>
+        <p style="margin-top:20px;font-size:1rem;line-height:1.8;">
+          De <strong>Momentbox Card Booth</strong> is een klassieke retro muntenautomaat die custom geïllustreerde greeting cards uitgeeft. Speciaal getekend voor jouw bruiloft of feest — de voorkant prachtig, de achterkant klaar voor een persoonlijke wens.
+        </p>
+        <p style="margin-top:14px;font-size:1rem;line-height:1.8;">
+          Na het feest heb je van al die wensen samen een uniek handgeschreven gastenboek — elke kaart een eigen verhaal, bewaard voor altijd.
+        </p>
+        <div class="info-box" style="margin-top:28px;">
+          <strong style="color:var(--terra);">💡 Uniek in Nederland</strong><br />
+          De Momentbox Card Booth is het enige gastenboek alternatief waarbij elke gast zijn eigen kaart verdi — vent via een retro automaat. Interactief, persoonlijk én onvergetelijk.
         </div>
       </div>
       <div class="fade-up" style="transition-delay:.1s;">
         <div class="feature-visual" style="padding:40px;">
           <div class="big-emoji">💌</div>
           <div class="sticker-tag rose" style="position:absolute;top:24px;left:24px;">Greeting Card</div>
-          <div style="background:var(--white);border-radius:12px;padding:20px 24px;width:85%;box-shadow:var(--shadow-md);margin-top:12px;text-align:left;">
-            <p style="font-size:0.78rem;color:var(--text-soft);font-style:italic;margin-bottom:10px;">"Lieve Anna &amp; Thomas,</p>
+          <div style="background:var(--white);border-radius:12px;padding:18px 22px;width:85%;box-shadow:var(--shadow-md);margin-top:12px;text-align:left;">
+            <p style="font-size:0.75rem;color:var(--text-soft);font-style:italic;margin-bottom:8px;">"Lieve Anna &amp; Thomas,</p>
             <div class="write-lines" style="gap:6px;">
               <div class="write-line" style="background:var(--beige-3);height:1px;"></div>
               <div class="write-line" style="background:var(--beige-3);height:1px;"></div>
               <div class="write-line" style="background:var(--beige-3);height:1px;width:60%;"></div>
             </div>
-            <p style="font-size:0.78rem;color:var(--text-soft);margin-top:10px;text-align:right;font-style:italic;">— Oma &amp; Opa ❤"</p>
+            <p style="font-size:0.75rem;color:var(--text-soft);margin-top:8px;text-align:right;font-style:italic;">— Oma &amp; Opa ❤"</p>
           </div>
           <div class="visual-caption">Elke kaart — een persoonlijk verhaal</div>
         </div>
@@ -256,100 +170,159 @@
   </div>
 </section>
 
-<!-- ── Why perfect guestbook ── -->
+<!-- ── Zo werkt het ── -->
+<section class="section" style="background:var(--beige-1);">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Zo werkt het</span>
+      <h2 style="max-width:560px;margin:0 auto;">Van token tot voor altijd</h2>
+    </div>
+    <div class="hiw-grid">
+      <div class="hiw-step fade-up">
+        <span class="hiw-badge">01</span>
+        <span class="hiw-icon">🎟️</span>
+        <h4>Tokens in de schaal</h4>
+        <p>120 tokens liggen klaar in een sfeervolle schaal bij de automaat. Gasten pakken er vrij één — geen uitdelen, geen gedoe.</p>
+      </div>
+      <div class="hiw-step fade-up" style="transition-delay:.08s;">
+        <span class="hiw-badge">02</span>
+        <span class="hiw-icon">🎰</span>
+        <h4>Token in de automaat</h4>
+        <p>De gast gooit het token in de automaat en draait aan de hendel. Een moment vol spanning — de kaart komt eruit.</p>
+      </div>
+      <div class="hiw-step fade-up" style="transition-delay:.16s;">
+        <span class="hiw-badge">03</span>
+        <span class="hiw-icon">💌</span>
+        <h4>Prachtige kaart eruit</h4>
+        <p>Een custom geïllustreerde greeting card verschijnt — speciaal getekend voor jullie. De achterkant wacht op een wens.</p>
+      </div>
+      <div class="hiw-step fade-up" style="transition-delay:.24s;">
+        <span class="hiw-badge">04</span>
+        <span class="hiw-icon">💛</span>
+        <h4>Wens schrijven &amp; bewaren</h4>
+        <p>De gast schrijft een persoonlijke wens op de achterkant. Na het feest hebben jullie een uniek handgeschreven gastenboek.</p>
+      </div>
+    </div>
+    <p style="margin-top:32px;text-align:center;font-size:0.82rem;color:var(--text-soft);">Standaard 120 tokens per event &nbsp;·&nbsp; Extra tokens bijbestellen: 20 stuks voor €10</p>
+  </div>
+</section>
+
+<!-- ── Vergelijking ── -->
 <section class="section" style="background:var(--white);">
   <div class="container">
     <div class="text-center" style="margin-bottom:48px;">
       <div class="section-label fade-up">Bruiloft gastenboek alternatief</div>
-      <h2 class="fade-up">Waarom dit het perfecte gastenboek is voor jouw bruiloft</h2>
-      <p class="fade-up" style="max-width:500px;margin:14px auto 0;">Uniek in Nederland — een gastenboek waarbij elke gast zijn eigen kaart heeft, zijn eigen woorden, zijn eigen moment.</p>
+      <h2 class="fade-up">Waarom dit zoveel beter is<br />dan een traditioneel gastenboek</h2>
+      <p class="fade-up" style="max-width:520px;margin:14px auto 0;">Elk gast zijn eigen kaart, zijn eigen woorden, zijn eigen moment — dat is het verschil.</p>
     </div>
-    <div class="reasons-grid">
-      <div class="reason-card fade-up" style="transition-delay:0s;">
-        <div class="reason-icon">🖼️</div>
-        <h4>Visueel verbluffend</h4>
-        <p style="font-size:0.9rem;margin-top:8px;">Alle kaarten samen in een doos of op een prikbord — het zijn instant interieurkunst. Elk feest, een ander ontwerp. Voor altijd van jullie.</p>
+    <div class="card-comparison fade-up">
+      <div class="comparison-col old">
+        <h4 style="color:var(--text-soft);">😕 Traditioneel gastenboek</h4>
+        <ul>
+          <li><span class="old-icon">—</span> Eén groot boek, gasten schrijven op een bladzijde</li>
+          <li><span class="old-icon">—</span> Gasten weten niet wat ze moeten schrijven</li>
+          <li><span class="old-icon">—</span> Verdwijnt in een lade na de bruiloft</li>
+          <li><span class="old-icon">—</span> Geen interactief moment voor gasten</li>
+          <li><span class="old-icon">—</span> Generiek — ziet er hetzelfde uit voor iedereen</li>
+        </ul>
       </div>
-      <div class="reason-card fade-up" style="transition-delay:.08s;">
-        <div class="reason-icon">✍️</div>
-        <h4>Persoonlijker dan een boek</h4>
-        <p style="font-size:0.9rem;margin-top:8px;">In een traditioneel gastenboek schrijft iedereen klein en gehaast. Op een eigen kaart nemen gasten de tijd. Het resultaat is veel persoonlijker.</p>
-      </div>
-      <div class="reason-card fade-up" style="transition-delay:.16s;">
-        <div class="reason-icon">🎭</div>
-        <h4>Het is een ervaring</h4>
-        <p style="font-size:0.9rem;margin-top:8px;">Het venden van de kaart, de spanning, de illustratie — gasten onthouden het. Het is geen taak maar een entertainment moment.</p>
-      </div>
-      <div class="reason-card fade-up" style="transition-delay:.24s;">
-        <div class="reason-icon">♾️</div>
-        <h4>Voor altijd bijzonder</h4>
-        <p style="font-size:0.9rem;margin-top:8px;">Over 10 jaar pak je die doos met kaartjes erbij. Je leest de woorden van mensen die je dierbaar zijn. Dat is onbetaalbaar.</p>
+      <div class="comparison-col new">
+        <h4 style="color:var(--terra);">✦ Momentbox Card Booth</h4>
+        <ul>
+          <li><span class="new-icon">✦</span> Elke gast heeft zijn eigen, unieke kaart</li>
+          <li><span class="new-icon">✦</span> Het venden van de kaart is een feestelijk ritueel</li>
+          <li><span class="new-icon">✦</span> Custom illustratie op elke kaart — speciaal voor jullie</li>
+          <li><span class="new-icon">✦</span> Jullie houden een handgemaakt gastenboek over</li>
+          <li><span class="new-icon">✦</span> 100% Instagram-worthy moment voor gasten</li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ── Card Rack Add-on ── -->
-<section class="section" style="background:var(--beige-1);">
-  <div class="container">
-    <div class="two-col">
-      <div class="fade-up">
-        <div class="section-label">Add-on</div>
-        <h2>Card rack — €89</h2>
-        <p style="margin-top:16px;font-size:1rem;line-height:1.8;">
-          Voeg een stijlvolle houten <strong>card rack</strong> toe aan jouw Greeting Card Booth. Gasten leggen hun ingevulde wenskaart zichtbaar in het rek — een prachtige live presentatie van alle wensen.
-        </p>
-        <p style="margin-top:12px;font-size:1rem;line-height:1.8;">
-          Aan het einde van de avond nemen jullie het rek mee — gevuld met alle kaartjes. Een instant gastenboek dat de volgende dag al klaar staat.
-        </p>
-        <a href="contact.html" class="btn btn-primary" style="margin-top:28px;">Card rack toevoegen</a>
-      </div>
-      <div class="fade-up" style="transition-delay:.1s;">
-        <div class="feature-visual" style="padding:40px;gap:16px;">
-          <div class="big-emoji">🗂️</div>
-          <div class="sticker-tag" style="position:absolute;top:24px;right:24px;">Add-on · €89</div>
-          <p style="font-size:0.88rem;color:var(--text-mid);text-align:center;max-width:220px;">Houten kaartjeshouder — past bij elk interieur</p>
+    <!-- Card rack add-on -->
+    <div style="margin-top:80px;">
+      <div class="two-col">
+        <div class="fade-up">
+          <div class="section-label">Add-on</div>
+          <h2>Card rack — +€89</h2>
+          <p style="margin-top:16px;font-size:1rem;line-height:1.8;">
+            Voeg een stijlvolle houten <strong>card rack</strong> toe. Gasten leggen hun ingevulde kaart zichtbaar in het rek — een prachtige live presentatie van alle wensen tijdens het feest.
+          </p>
+          <p style="margin-top:12px;font-size:1rem;line-height:1.8;">
+            Aan het einde van de avond nemen jullie het rek mee — gevuld met alle kaartjes. Een instant gastenboek dat de volgende dag al klaarstaat.
+          </p>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:24px;">Card rack toevoegen</a>
+        </div>
+        <div class="fade-up" style="transition-delay:.1s;">
+          <div class="feature-visual" style="padding:40px;gap:16px;">
+            <div class="big-emoji">🗂️</div>
+            <div class="sticker-tag" style="position:absolute;top:24px;right:24px;">Add-on · €89</div>
+            <p style="font-size:0.88rem;color:var(--text-mid);text-align:center;max-width:220px;">Houten kaartjeshouder — past bij elk interieur</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Machine Photo ── -->
-<div class="split-section">
-  <div class="split-media">
-    <img src="images/greeting-card-booth.jpg" alt="Greeting Card Booth machine" />
+<!-- ── Prijs ── -->
+<section class="section" style="background:var(--beige-1);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:52px;">
+      <div class="section-label fade-up">Prijs</div>
+      <h2 class="fade-up">Card Booth — €375 all-in</h2>
+      <p class="fade-up" style="max-width:480px;margin:14px auto 0;">Alles inbegrepen. Geen verborgen kosten. Jij geniet, wij regelen de rest.</p>
+    </div>
+    <div style="max-width:600px;margin:0 auto;" class="fade-up">
+      <div style="background:var(--white);border:2px solid var(--beige-3);border-radius:var(--radius-md);overflow:hidden;">
+        <div style="padding:36px;">
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px;">
+            <span style="font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:700;color:var(--text);">€375</span>
+            <span style="color:var(--text-soft);font-size:0.9rem;">eenmalig all-in</span>
+          </div>
+          <p style="font-size:0.78rem;color:var(--text-soft);margin:0 0 4px;">met bezorging &amp; opbouw <span style="color:var(--terra);font-weight:600;">— of €300 bij afhalen in Hapert</span></p>
+          <ul class="feature-list" style="margin-top:24px;">
+            <li>Custom geïllustreerde greeting cards (eigen design)</li>
+            <li>Retro muntautomaat op jouw locatie</li>
+            <li>Custom front panel insert</li>
+            <li>120 tokens per event (schaal inbegrepen)</li>
+            <li>Bezorging, opbouw &amp; afbouw</li>
+            <li>1 custom illustratie design inbegrepen</li>
+            <li>Persoonlijk contact &amp; design afstemming</li>
+            <li>Optioneel: card rack toevoegen (+€89)</li>
+          </ul>
+          <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary" style="flex:1;justify-content:center;">Card Booth boeken</a>
+            <a href="pakketten.html" class="btn btn-secondary" style="flex:1;justify-content:center;">Alle pakketten</a>
+          </div>
+        </div>
+      </div>
+      <div class="info-box fade-up" style="margin-top:16px;">
+        <strong>💡 Extra tokens bijbestellen?</strong> 20 tokens voor €10 — bestel er gerust bij voor grotere gezelschappen.
+      </div>
+    </div>
   </div>
-  <div class="split-text">
-    <span class="section-label">De machine</span>
-    <h2>Retro charme,<br />moderne beleving</h2>
-    <p>De Momentpunt Greeting Card Booth is een klassieke retro muntenautomaat — volledig in stijl aangekleed voor jouw event. Custom front panel, speelmunten, professionele opbouw.</p>
-    <p>Al vanaf <strong>€375</strong> all-in. Inclusief bezorging, opbouw, afbouw en 1 custom illustratie design.</p>
-    <a href="contact.html" class="btn btn-primary" style="margin-right:12px;">Card Booth aanvragen</a>
-    <a href="pakketten.html" class="btn btn-secondary">Bekijk pakketten</a>
-  </div>
-</div>
+</section>
 
 <!-- ── CTA ── -->
-<section class="section" style="background:var(--white);">
+<section class="cta-photo" style="background-image: url('images/machine-garden.jpg');">
   <div class="container">
-    <div class="cta-banner fade-up">
-      <span style="font-size:2rem;display:block;margin-bottom:12px;">💌</span>
-      <h2>Greeting Card Booth voor jouw bruiloft?</h2>
-      <p>Het perfecte gastenboek alternatief voor bruiloften, verjaardagen en bedrijfsfeesten in Nederland. Vraag vandaag nog jouw offerte aan.</p>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
-        <a href="contact.html" class="btn btn-secondary">Aanvraag sturen</a>
-        <a href="pakketten.html" class="btn btn-secondary">Bekijk alle pakketten</a>
+    <div class="cta-photo-inner fade-up">
+      <span class="section-label">Card Booth voor jouw bruiloft?</span>
+      <h2>Het gastenboek dat gasten<br />nooit vergeten</h2>
+      <p>Het perfecte alternatief voor bruiloften, verjaardagen en bedrijfsfeesten in Nederland. Vraag vandaag nog jouw offerte aan.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary">Aanvraag sturen</a>
+        <a href="pakketten.html" class="btn btn-ghost">Bekijk alle pakketten</a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-inner">
+  <div class="footer-inner container">
     <div class="footer-brand">
       <a href="index.html"><img src="images/logo.png" alt="Momentpunt" class="footer-logo-img" /></a>
-      <p>Een muntje. Een moment. Voor altijd.<br />Custom automaten voor bruiloften, feesten &amp; verjaardagen.</p>
+      <p>Een token. Een moment. Voor altijd.<br />Custom automaten voor bruiloften, feesten &amp; verjaardagen.</p>
       <p style="margin-top:12px; color:var(--text-mid);">📍 Noord-Brabant, Nederland</p>
       <p style="margin-top:4px;"><a href="mailto:info@momentpunt.nl" style="color:var(--text);">info@momentpunt.nl</a></p>
       <div class="footer-socials">
@@ -380,14 +353,28 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Momentpunt · Noord-Brabant</span>
-    <span>✦ kaartjes automaat huren</span>
+    <div class="footer-bottom-inner">
+      <span>© 2025 Momentpunt · Noord-Brabant</span>
+      <span>✦ kaartjes automaat huren</span>
+    </div>
   </div>
 </footer>
 
 <script>
-  function openMenu() { document.getElementById('mobileMenu').classList.add('open'); }
-  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const nav = document.getElementById('mainNav');
+    if (menu.classList.contains('open') && !nav.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+      document.querySelector('.hamburger').classList.remove('open');
+    }
+  });
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });

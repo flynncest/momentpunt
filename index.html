@@ -27,20 +27,20 @@
       <li><a href="https://tiktok.com/@momentpunt.nl" class="nav-icon" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.52V6.76a4.84 4.84 0 01-1.02-.07z"/></svg></a></li>
       <li><a href="contact.html" class="btn btn-primary btn-sm nav-cta">Book Now</a></li>
     </ul>
-    <button class="hamburger" onclick="openMenu()" aria-label="Menu">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="closeMenu()">✕</button>
-  <a href="index.html" onclick="closeMenu()">Home</a>
-  <a href="stickerbooth.html" onclick="closeMenu()">Sticker Booth</a>
-  <a href="greetingcardbooth.html" onclick="closeMenu()">Card Booth</a>
-  <a href="mixbooth.html" onclick="closeMenu()">Mix Booth</a>
-  <a href="pakketten.html" onclick="closeMenu()">Pakketten</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
+  <a href="index.html" class="active">Home</a>
+  <a href="stickerbooth.html">Sticker Booth</a>
+  <a href="greetingcardbooth.html">Card Booth</a>
+  <a href="mixbooth.html">Mix Booth</a>
+  <a href="pakketten.html">Pakketten</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mobile-menu-cta">Book Now →</a>
 </div>
 
 <!-- ── Hero ── -->
@@ -95,35 +95,40 @@
 </div>
 
 <!-- ── How it works ── -->
-<section class="section" style="background:var(--white);">
+<section class="section" style="background:var(--white); padding-bottom:100px;">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center" style="margin-bottom:8px;">
       <span class="section-label">Zo werkt het</span>
-      <h2 style="max-width:680px; margin: 0 auto;">Van munt tot herinnering</h2>
+      <h2 style="max-width:560px; margin: 0 auto;">Van token tot herinnering</h2>
+      <p style="max-width:440px; margin:16px auto 0; font-size:0.92rem; color:var(--text-soft);">Simpel, feestelijk, onvergetelijk — zo werkt het op elk event.</p>
     </div>
-
-    <div class="steps-editorial">
-      <div class="step-editorial">
-        <span class="step-n">01</span>
-        <h4>Gast krijgt een muntje</h4>
-        <p style="font-size:0.92rem; margin-top:10px;">Elke gast krijgt bij binnenkomst een speciaal Momentbox-muntstuk — al inbegrepen in het pakket.</p>
+    <div class="hiw-grid">
+      <div class="hiw-step fade-up">
+        <span class="hiw-badge">01</span>
+        <span class="hiw-icon">🎟️</span>
+        <h4>Tokens in de schaal</h4>
+        <p>120 tokens klaargelegd in een sfeervolle schaal bij de automaat. Gasten pakken er vrij één — geen uitdelen nodig.</p>
       </div>
-      <div class="step-editorial">
-        <span class="step-n">02</span>
-        <h4>Het muntje gaat erin</h4>
-        <p style="font-size:0.92rem; margin-top:10px;">De gast loopt naar de automaat, gooit het muntje erin en draait de hendel. Een moment vol verwachting.</p>
+      <div class="hiw-step fade-up" style="transition-delay:.08s;">
+        <span class="hiw-badge">02</span>
+        <span class="hiw-icon">🎰</span>
+        <h4>Token in de automaat</h4>
+        <p>Token erin, hendel draaien. Een moment vol spanning — wat komt er voor hen uit?</p>
       </div>
-      <div class="step-editorial">
-        <span class="step-n">03</span>
+      <div class="hiw-step fade-up" style="transition-delay:.16s;">
+        <span class="hiw-badge">03</span>
+        <span class="hiw-icon">✨</span>
         <h4>Sticker of kaartje!</h4>
-        <p style="font-size:0.92rem; margin-top:10px;">Een custom geïllustreerde sticker of greeting card verschijnt — speciaal getekend voor jouw event.</p>
+        <p>Een custom geïllustreerde sticker of greeting card — speciaal getekend voor jouw event.</p>
       </div>
-      <div class="step-editorial">
-        <span class="step-n">04</span>
-        <h4>Een blijvende herinnering</h4>
-        <p style="font-size:0.92rem; margin-top:10px;">De sticker gaat op de koelkast. De kaart met wens gaat in een doos. Een aandenken dat echt bijblijft.</p>
+      <div class="hiw-step fade-up" style="transition-delay:.24s;">
+        <span class="hiw-badge">04</span>
+        <span class="hiw-icon">💛</span>
+        <h4>Voor altijd bewaard</h4>
+        <p>Sticker op de koelkast, kaartje in een doosje. Een aandenken dat echt bijblijft.</p>
       </div>
     </div>
+    <p style="margin-top:28px; font-size:0.78rem; color:var(--text-soft); text-align:center; letter-spacing:0.04em;">Standaard 120 tokens per event &nbsp;·&nbsp; Extra tokens: 20 stuks voor €10</p>
   </div>
 </section>
 
@@ -148,7 +153,7 @@
       <!-- <img src="photos/munt-gooien.jpg" alt="Gast gooit een munt" /> -->
       <div class="photo-placeholder">
         <div class="photo-placeholder-emoji">🪙</div>
-        <div class="photo-placeholder-label">Het muntje gaat erin</div>
+        <div class="photo-placeholder-label">Het token gaat erin</div>
       </div>
       <div class="photo-caption">Een moment vol verwachting</div>
     </div>
@@ -190,84 +195,91 @@
 </section>
 
 <!-- ── Packages ── -->
-<section class="section" style="background:var(--beige-1);">
+<section class="section" style="background:var(--beige-1); padding-top:100px; padding-bottom:100px;">
   <div class="container">
-    <div class="text-center" style="margin-bottom:80px;">
+    <div class="text-center" style="margin-bottom:48px;">
       <span class="section-label">Pakketten</span>
       <h2>Alles inbegrepen,<br />geen verrassingen</h2>
-      <p style="max-width:480px; margin:20px auto 0;">Bezorging, opbouw, afbouw, custom design en speelmunten voor al je gasten — voor een vast bedrag.</p>
+      <p style="max-width:420px; margin:16px auto 0; font-size:0.92rem;">Custom design, 120 tokens, bezorging & opbouw — voor een vast all-in bedrag.</p>
     </div>
 
     <div class="packages-grid">
 
+      <!-- Sticker Booth — €375 -->
       <div class="package-card fade-up">
         <div class="package-header">
-          <span class="section-label">The Sticker</span>
-          <h3 style="margin-bottom:8px;">Sticker Booth</h3>
-          <p style="font-size:0.9rem;">Custom stickers uit een retro muntautomaat</p>
+          <span class="section-label" style="margin-bottom:6px;">Sticker</span>
+          <h3 style="margin:0 0 4px; font-size:1.15rem;">Sticker Booth</h3>
+          <p style="font-size:0.8rem; color:var(--text-soft); margin-bottom:0;">Custom stickers uit een retro automaat</p>
           <div class="package-price">€375</div>
-          <p style="font-size:0.78rem; color:var(--text-soft); margin-top:4px;">eenmalig, all-in</p>
+          <p style="font-size:0.72rem; color:var(--text-soft); margin:0;">
+            all-in met bezorging
+            <span style="display:block; margin-top:3px; color:var(--terra); font-weight:600;">€300 bij afhalen in Hapert</span>
+          </p>
         </div>
         <div class="package-body">
           <ul class="feature-list">
             <li>Custom geïllustreerde stickers</li>
-            <li>Kies uit 30+ sticker thema's</li>
-            <li>Retro muntautomaat op locatie</li>
-            <li>Speciaal front panel insert</li>
-            <li>Speelmunten voor al jouw gasten</li>
+            <li>20 thema's, volledig aanpasbaar</li>
+            <li>120 tokens (schaal inbegrepen)</li>
             <li>Bezorging, opbouw &amp; afbouw</li>
             <li>1 custom design inbegrepen</li>
           </ul>
-          <a href="stickerbooth.html" class="btn btn-secondary" style="margin-top:32px; width:100%; justify-content:center;">Meer over Sticker Booth</a>
+          <a href="stickerbooth.html" class="btn btn-secondary btn-sm" style="margin-top:18px; width:100%; justify-content:center;">Meer info →</a>
         </div>
       </div>
 
-      <div class="package-card featured fade-up" style="transition-delay:.1s;">
+      <!-- Card Booth — €375 -->
+      <div class="package-card fade-up" style="transition-delay:.1s;">
         <div class="package-header">
-          <span class="section-label">Populairste keuze</span>
-          <h3 style="margin-bottom:8px;">Mix Booth</h3>
-          <p style="font-size:0.9rem;">Stickers én kaartjes — het complete pakket</p>
-          <div class="package-price">€425</div>
-          <p style="font-size:0.78rem; color:var(--text-soft); margin-top:4px;">eenmalig, all-in</p>
-        </div>
-        <div class="package-body">
-          <ul class="feature-list">
-            <li>Custom stickers én greeting cards</li>
-            <li>Één machine, twee slots</li>
-            <li>Speciaal front panel insert</li>
-            <li>Speelmunten voor al jouw gasten</li>
-            <li>Bezorging, opbouw &amp; afbouw</li>
-            <li>1 custom design per type</li>
-          </ul>
-          <a href="mixbooth.html" class="btn btn-secondary" style="margin-top:12px; width:100%; justify-content:center;">Meer over Mix Booth</a>
-          <a href="contact.html" class="btn btn-primary" style="margin-top:12px; width:100%; justify-content:center;">Boek dit pakket</a>
-        </div>
-      </div>
-
-      <div class="package-card fade-up" style="transition-delay:.2s;">
-        <div class="package-header">
-          <span class="section-label">The Card</span>
-          <h3 style="margin-bottom:8px;">Greeting Card Booth</h3>
-          <p style="font-size:0.9rem;">Gepersonaliseerde kaartjes als uniek gastenboek</p>
+          <span class="section-label" style="margin-bottom:6px;">Kaartjes</span>
+          <h3 style="margin:0 0 4px; font-size:1.15rem;">Card Booth</h3>
+          <p style="font-size:0.8rem; color:var(--text-soft); margin-bottom:0;">Custom kaartjes als uniek gastenboek</p>
           <div class="package-price">€375</div>
-          <p style="font-size:0.78rem; color:var(--text-soft); margin-top:4px;">eenmalig, all-in</p>
+          <p style="font-size:0.72rem; color:var(--text-soft); margin:0;">
+            all-in met bezorging
+            <span style="display:block; margin-top:3px; color:var(--terra); font-weight:600;">€300 bij afhalen in Hapert</span>
+          </p>
         </div>
         <div class="package-body">
           <ul class="feature-list">
             <li>Custom geïllustreerde greeting cards</li>
-            <li>Retro muntautomaat op locatie</li>
-            <li>Speciaal front panel insert</li>
-            <li>Speelmunten voor al jouw gasten</li>
+            <li>Gasten schrijven een persoonlijke wens</li>
+            <li>120 tokens (schaal inbegrepen)</li>
             <li>Bezorging, opbouw &amp; afbouw</li>
             <li>1 custom design inbegrepen</li>
           </ul>
-          <a href="greetingcardbooth.html" class="btn btn-secondary" style="margin-top:32px; width:100%; justify-content:center;">Meer over Card Booth</a>
+          <a href="greetingcardbooth.html" class="btn btn-secondary btn-sm" style="margin-top:18px; width:100%; justify-content:center;">Meer info →</a>
+        </div>
+      </div>
+
+      <!-- Mix Booth — €425 (most expensive, right) -->
+      <div class="package-card featured fade-up" style="transition-delay:.2s;">
+        <div class="package-header">
+          <span class="package-badge">✦ Populairste keuze</span>
+          <h3 style="margin:0 0 4px; font-size:1.15rem;">Mix Booth</h3>
+          <p style="font-size:0.8rem; color:var(--text-soft); margin-bottom:0;">Stickers én kaartjes — één machine</p>
+          <div class="package-price">€425</div>
+          <p style="font-size:0.72rem; color:var(--text-soft); margin:0;">
+            all-in met bezorging
+            <span style="display:block; margin-top:3px; color:var(--terra); font-weight:600;">€350 bij afhalen in Hapert</span>
+          </p>
+        </div>
+        <div class="package-body">
+          <ul class="feature-list">
+            <li>Custom stickers <em>én</em> greeting cards</li>
+            <li>Één machine, twee slots</li>
+            <li>120 tokens (schaal inbegrepen)</li>
+            <li>Bezorging, opbouw &amp; afbouw</li>
+            <li>2 custom designs inbegrepen</li>
+          </ul>
+          <a href="mixbooth.html" class="btn btn-primary btn-sm" style="margin-top:18px; width:100%; justify-content:center;">Meer info →</a>
         </div>
       </div>
 
     </div>
-    <p class="text-center" style="margin-top:40px; font-size:0.85rem; color:var(--text-soft);">
-      Alle add-ons en extra opties op de <a href="pakketten.html" style="color:var(--text); font-weight:600; border-bottom:1px solid var(--beige-3);">pakketpagina →</a>
+    <p class="text-center" style="margin-top:28px; font-size:0.82rem; color:var(--text-soft);">
+      Alle add-ons en extra opties op de <a href="pakketten.html" style="color:var(--text); font-weight:600; text-decoration:underline; text-underline-offset:3px;">pakketpagina →</a>
     </p>
   </div>
 </section>
@@ -306,15 +318,15 @@
 </section>
 
 <!-- ── CTA ── -->
-<section class="section" style="background:var(--white); padding-top:0;">
+<section class="cta-photo" style="background-image: url('images/machine-garden.jpg');">
   <div class="container">
-    <div class="cta-banner">
-      <span class="eyebrow">Klaar om te boeken?</span>
+    <div class="cta-photo-inner fade-up">
+      <span class="section-label">Klaar om te boeken?</span>
       <h2>Verras jouw gasten met<br />een onvergetelijk moment</h2>
       <p>Vertel ons over jouw feest — wij zorgen voor de rest. Van custom ontwerp tot bezorging op de dag zelf.</p>
       <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-        <a href="contact.html" class="btn btn-secondary">Stuur een aanvraag</a>
-        <a href="pakketten.html" class="btn btn-secondary">Bekijk pakketten</a>
+        <a href="contact.html" class="btn btn-primary">Stuur een aanvraag</a>
+        <a href="pakketten.html" class="btn btn-ghost">Bekijk pakketten</a>
       </div>
     </div>
   </div>
@@ -322,10 +334,10 @@
 
 <!-- ── Footer ── -->
 <footer>
-  <div class="footer-inner">
+  <div class="footer-inner container">
     <div class="footer-brand">
       <a href="index.html"><img src="images/logo.png" alt="Momentpunt" class="footer-logo-img" /></a>
-      <p>Een muntje. Een moment. Voor altijd.<br />Custom automaten voor bruiloften, feesten &amp; verjaardagen.</p>
+      <p>Een token. Een moment. Voor altijd.<br />Custom automaten voor bruiloften, feesten &amp; verjaardagen.</p>
       <p style="margin-top:12px; color:var(--text-mid);">📍 Noord-Brabant, Nederland</p>
       <p style="margin-top:4px;"><a href="mailto:info@momentpunt.nl" style="color:var(--text);">info@momentpunt.nl</a></p>
       <div class="footer-socials">
@@ -356,14 +368,29 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Momentpunt · Noord-Brabant</span>
-    <span>Een muntje. Een moment. Voor altijd.</span>
+    <div class="footer-bottom-inner">
+      <span>© 2025 Momentpunt · Noord-Brabant</span>
+      <span>Een token. Een moment. Voor altijd.</span>
+    </div>
   </div>
 </footer>
 
 <script>
-  function openMenu() { document.getElementById('mobileMenu').classList.add('open'); }
-  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+  // Close menu on outside click
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const nav = document.getElementById('mainNav');
+    if (menu.classList.contains('open') && !nav.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+      document.querySelector('.hamburger').classList.remove('open');
+    }
+  });
 
   // Transparent → white nav on scroll
   const nav = document.getElementById('mainNav');
